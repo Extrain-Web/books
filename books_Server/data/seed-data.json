@@ -1,0 +1,2440 @@
+{
+  "users": [
+    {
+      "email": "superadmin@example.com",
+      "password": "Password123!",
+      "firstName": "Books River",
+      "lastName": "Super Admin",
+      "phone": "01833389291",
+      "role": "superadmin",
+      "status": "active",
+      "isEmailVerified": true
+    },
+    {
+      "email": "admin@example.com",
+      "password": "Password123!",
+      "firstName": "Books River",
+      "lastName": "Manager",
+      "phone": "01833389291",
+      "role": "admin",
+      "status": "active",
+      "isEmailVerified": true
+    },
+    {
+      "email": "customer@example.com",
+      "password": "Password123!",
+      "firstName": "Rahim",
+      "lastName": "Ahmed",
+      "phone": "01800000003",
+      "role": "user",
+      "status": "active",
+      "isEmailVerified": true,
+      "shippingAddresses": [
+        {
+          "label": "Home",
+          "fullName": "Rahim Ahmed",
+          "phone": "01800000003",
+          "address": "House 12, Road 5, Dhanmondi",
+          "area": "Dhanmondi",
+          "city": "Dhaka",
+          "postalCode": "1205",
+          "isDefault": true
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "Shop By Class",
+      "slug": "shop-by-class",
+      "description": "Find books by your class - Play Group to Class 10.",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+      "icon": "🎓",
+      "order": 1,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "By Curriculum",
+      "slug": "by-curriculum",
+      "description": "Edexcel, Cambridge, NCTB and Olympiad titles by curriculum.",
+      "image": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80",
+      "icon": "📘",
+      "order": 2,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "Comic Books",
+      "slug": "comic-books",
+      "description": "Tintin, Chacha Chowdhury, Asterix and more - timeless comics.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+      "icon": "📖",
+      "order": 3,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "Manga Books",
+      "slug": "manga-books",
+      "description": "Naruto, One Piece, Death Note and the best manga box sets.",
+      "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=80",
+      "icon": "🎌",
+      "order": 4,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "Ladybird Books",
+      "slug": "ladybird-books",
+      "description": "Beloved Ladybird readers and classic tales for early learners.",
+      "image": "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&auto=format&fit=crop&q=80",
+      "icon": "🐞",
+      "order": 5,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "Children's Books",
+      "slug": "childrens-books",
+      "description": "Story, rhymes, activity, encyclopedia and learning books for kids.",
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80",
+      "icon": "🧒",
+      "order": 6,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "Essential Books",
+      "slug": "essential-books",
+      "description": "Bestselling biography, self-help, business and reference titles.",
+      "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80",
+      "icon": "📚",
+      "order": 7,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "Bangla Books",
+      "slug": "bangla-books",
+      "description": "Feluda, Himu, Byomkesh and the finest of Bengali literature.",
+      "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop&q=80",
+      "icon": "🇧🇩",
+      "order": 8,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "Stationery",
+      "slug": "stationery",
+      "description": "Pens, notebooks, colours and everything for school and office.",
+      "image": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&auto=format&fit=crop&q=80",
+      "icon": "✏️",
+      "order": 9,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "Notebooks",
+      "slug": "notebooks",
+      "description": "Diaries, exercise books and premium notebooks.",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80",
+      "icon": "📓",
+      "order": 10,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "Gadget & Others",
+      "slug": "gadget-others",
+      "description": "Book lights, bookmarks, stands and thoughtful reading gadgets.",
+      "image": "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=800&auto=format&fit=crop&q=80",
+      "icon": "🎁",
+      "order": 11,
+      "isFeatured": true,
+      "showInMenu": true,
+      "showInHome": true
+    },
+    {
+      "name": "Play Group",
+      "slug": "shop-by-class-play-group",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 1,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Nursery",
+      "slug": "shop-by-class-nursery",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 2,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "KG-1",
+      "slug": "shop-by-class-kg-1",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 3,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "KG-2",
+      "slug": "shop-by-class-kg-2",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 4,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Class 1",
+      "slug": "shop-by-class-class-1",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 5,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Class 2",
+      "slug": "shop-by-class-class-2",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 6,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Class 3",
+      "slug": "shop-by-class-class-3",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 7,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Class 4",
+      "slug": "shop-by-class-class-4",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 8,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Class 5",
+      "slug": "shop-by-class-class-5",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 9,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Class 6",
+      "slug": "shop-by-class-class-6",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 10,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Class 7",
+      "slug": "shop-by-class-class-7",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 11,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Class 8",
+      "slug": "shop-by-class-class-8",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 12,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Class 9",
+      "slug": "shop-by-class-class-9",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 13,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Class 10",
+      "slug": "shop-by-class-class-10",
+      "parentSlug": "shop-by-class",
+      "description": "",
+      "icon": "",
+      "order": 14,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Edexcel",
+      "slug": "by-curriculum-edexcel",
+      "parentSlug": "by-curriculum",
+      "description": "",
+      "icon": "",
+      "order": 1,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Cambridge",
+      "slug": "by-curriculum-cambridge",
+      "parentSlug": "by-curriculum",
+      "description": "",
+      "icon": "",
+      "order": 2,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "NCTB (Bangla Medium)",
+      "slug": "by-curriculum-nctb-bangla-medium",
+      "parentSlug": "by-curriculum",
+      "description": "",
+      "icon": "",
+      "order": 3,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Olympiad",
+      "slug": "by-curriculum-olympiad",
+      "parentSlug": "by-curriculum",
+      "description": "",
+      "icon": "",
+      "order": 4,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Tintin Bangla",
+      "slug": "comic-books-tintin-bangla",
+      "parentSlug": "comic-books",
+      "description": "",
+      "icon": "",
+      "order": 1,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Tintin English",
+      "slug": "comic-books-tintin-english",
+      "parentSlug": "comic-books",
+      "description": "",
+      "icon": "",
+      "order": 2,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Chacha Chowdhury",
+      "slug": "comic-books-chacha-chowdhury",
+      "parentSlug": "comic-books",
+      "description": "",
+      "icon": "",
+      "order": 3,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Batul the Great",
+      "slug": "comic-books-batul-the-great",
+      "parentSlug": "comic-books",
+      "description": "",
+      "icon": "",
+      "order": 4,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Nonte Fonte",
+      "slug": "comic-books-nonte-fonte",
+      "parentSlug": "comic-books",
+      "description": "",
+      "icon": "",
+      "order": 5,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Asterix",
+      "slug": "comic-books-asterix",
+      "parentSlug": "comic-books",
+      "description": "",
+      "icon": "",
+      "order": 6,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Hada Bhoda",
+      "slug": "comic-books-hada-bhoda",
+      "parentSlug": "comic-books",
+      "description": "",
+      "icon": "",
+      "order": 7,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Basic Ali",
+      "slug": "comic-books-basic-ali",
+      "parentSlug": "comic-books",
+      "description": "",
+      "icon": "",
+      "order": 8,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Story Book",
+      "slug": "childrens-books-story-book",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 1,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Science",
+      "slug": "childrens-books-science",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 2,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Math",
+      "slug": "childrens-books-math",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 3,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "English",
+      "slug": "childrens-books-english",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 4,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Rhymes Books",
+      "slug": "childrens-books-rhymes-books",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 5,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Fairy Tales Books",
+      "slug": "childrens-books-fairy-tales-books",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 6,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Activity Books",
+      "slug": "childrens-books-activity-books",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 7,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Encyclopedia",
+      "slug": "childrens-books-encyclopedia",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 8,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Grammar Books",
+      "slug": "childrens-books-grammar-books",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 9,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Colouring Books",
+      "slug": "childrens-books-colouring-books",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 10,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Handwriting",
+      "slug": "childrens-books-handwriting",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 11,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Flash Card",
+      "slug": "childrens-books-flash-card",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 12,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Phonics Book",
+      "slug": "childrens-books-phonics-book",
+      "parentSlug": "childrens-books",
+      "description": "",
+      "icon": "",
+      "order": 13,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Biography",
+      "slug": "essential-books-biography",
+      "parentSlug": "essential-books",
+      "description": "",
+      "icon": "",
+      "order": 1,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Self Help",
+      "slug": "essential-books-self-help",
+      "parentSlug": "essential-books",
+      "description": "",
+      "icon": "",
+      "order": 2,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Religion",
+      "slug": "essential-books-religion",
+      "parentSlug": "essential-books",
+      "description": "",
+      "icon": "",
+      "order": 3,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "War and History",
+      "slug": "essential-books-war-and-history",
+      "parentSlug": "essential-books",
+      "description": "",
+      "icon": "",
+      "order": 4,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Dictionary",
+      "slug": "essential-books-dictionary",
+      "parentSlug": "essential-books",
+      "description": "",
+      "icon": "",
+      "order": 5,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Politics and Economy",
+      "slug": "essential-books-politics-and-economy",
+      "parentSlug": "essential-books",
+      "description": "",
+      "icon": "",
+      "order": 6,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Business and Finance",
+      "slug": "essential-books-business-and-finance",
+      "parentSlug": "essential-books",
+      "description": "",
+      "icon": "",
+      "order": 7,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Cooking",
+      "slug": "essential-books-cooking",
+      "parentSlug": "essential-books",
+      "description": "",
+      "icon": "",
+      "order": 8,
+      "showInMenu": true,
+      "showInHome": false
+    },
+    {
+      "name": "Computer Science",
+      "slug": "essential-books-computer-science",
+      "parentSlug": "essential-books",
+      "description": "",
+      "icon": "",
+      "order": 9,
+      "showInMenu": true,
+      "showInHome": false
+    }
+  ],
+  "products": [
+    {
+      "name": "The Adventures of Tintin - Collector's Edition",
+      "slug": "the-adventures-of-tintin-collector-s-edition",
+      "categorySlug": "comic-books",
+      "sku": "BR-001",
+      "description": "The Adventures of Tintin - Collector's Edition - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 3500,
+      "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "1.2 kg",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 0,
+      "totalSold": 0,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": true,
+      "isFlashSale": true,
+      "isOnSale": true,
+      "tags": [
+        "comic-books",
+        "books-river"
+      ],
+      "originalPrice": 4200
+    },
+    {
+      "name": "Chacha Chowdhury Comics Collection",
+      "slug": "chacha-chowdhury-comics-collection",
+      "categorySlug": "comic-books",
+      "sku": "BR-002",
+      "description": "Chacha Chowdhury Comics Collection - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 250,
+      "thumbnail": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "250 g",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 3,
+      "totalSold": 7,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "comic-books",
+        "books-river"
+      ],
+      "originalPrice": 300
+    },
+    {
+      "name": "Nonte Fonte Samagra",
+      "slug": "nonte-fonte-samagra",
+      "categorySlug": "comic-books",
+      "sku": "BR-003",
+      "description": "Nonte Fonte Samagra - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 350,
+      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "400 g",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 6,
+      "totalSold": 14,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "comic-books",
+        "books-river"
+      ],
+      "originalPrice": 450
+    },
+    {
+      "name": "Asterix - The Complete Collection",
+      "slug": "asterix-the-complete-collection",
+      "categorySlug": "comic-books",
+      "sku": "BR-004",
+      "description": "Asterix - The Complete Collection - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 2990,
+      "thumbnail": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "1.5 kg",
+      "stock": 80,
+      "brand": "Books River",
+      "rating": 4.8,
+      "reviewCount": 9,
+      "totalSold": 21,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "comic-books",
+        "books-river"
+      ],
+      "originalPrice": 3600
+    },
+    {
+      "name": "Handa Bhonda Collection",
+      "slug": "handa-bhonda-collection",
+      "categorySlug": "comic-books",
+      "sku": "BR-005",
+      "description": "Handa Bhonda Collection - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 220,
+      "thumbnail": "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "250 g",
+      "stock": 90,
+      "brand": "Books River",
+      "rating": 4.9,
+      "reviewCount": 12,
+      "totalSold": 28,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "comic-books",
+        "books-river"
+      ],
+      "originalPrice": 280
+    },
+    {
+      "name": "Batul the Great Comics",
+      "slug": "batul-the-great-comics",
+      "categorySlug": "comic-books",
+      "sku": "BR-006",
+      "description": "Batul the Great Comics - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 240,
+      "thumbnail": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "260 g",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 15,
+      "totalSold": 35,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": false,
+      "tags": [
+        "comic-books",
+        "books-river"
+      ]
+    },
+    {
+      "name": "Basic Ali Comics Collection",
+      "slug": "basic-ali-comics-collection",
+      "categorySlug": "comic-books",
+      "sku": "BR-007",
+      "description": "Basic Ali Comics Collection - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 320,
+      "thumbnail": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "300 g",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 18,
+      "totalSold": 42,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "comic-books",
+        "books-river"
+      ],
+      "originalPrice": 400
+    },
+    {
+      "name": "Tintin: Destination Moon",
+      "slug": "tintin-destination-moon",
+      "categorySlug": "comic-books",
+      "sku": "BR-008",
+      "description": "Tintin: Destination Moon - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 320,
+      "thumbnail": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "300 g",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 21,
+      "totalSold": 49,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": false,
+      "tags": [
+        "comic-books",
+        "books-river"
+      ]
+    },
+    {
+      "name": "Naruto Box Set (Vol 1-27)",
+      "slug": "naruto-box-set-vol-1-27",
+      "categorySlug": "manga-books",
+      "sku": "BR-009",
+      "description": "Naruto Box Set (Vol 1-27) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 8500,
+      "thumbnail": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "5 kg",
+      "stock": 80,
+      "brand": "Books River",
+      "rating": 4.8,
+      "reviewCount": 24,
+      "totalSold": 56,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "manga-books",
+        "books-river"
+      ],
+      "originalPrice": 9990
+    },
+    {
+      "name": "One Piece Collection (Vol 1-23)",
+      "slug": "one-piece-collection-vol-1-23",
+      "categorySlug": "manga-books",
+      "sku": "BR-010",
+      "description": "One Piece Collection (Vol 1-23) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 6900,
+      "thumbnail": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "4 kg",
+      "stock": 90,
+      "brand": "Books River",
+      "rating": 4.9,
+      "reviewCount": 27,
+      "totalSold": 63,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "manga-books",
+        "books-river"
+      ],
+      "originalPrice": 7990
+    },
+    {
+      "name": "Death Note Complete Set (Vol 1-13)",
+      "slug": "death-note-complete-set-vol-1-13",
+      "categorySlug": "manga-books",
+      "sku": "BR-011",
+      "description": "Death Note Complete Set (Vol 1-13) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 3200,
+      "thumbnail": "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "2 kg",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 30,
+      "totalSold": 70,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": true,
+      "isOnSale": true,
+      "tags": [
+        "manga-books",
+        "books-river"
+      ],
+      "originalPrice": 3900
+    },
+    {
+      "name": "Demon Slayer: Kimetsu no Yaiba (Vol 1-23)",
+      "slug": "demon-slayer-kimetsu-no-yaiba-vol-1-23",
+      "categorySlug": "manga-books",
+      "sku": "BR-012",
+      "description": "Demon Slayer: Kimetsu no Yaiba (Vol 1-23) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 5750,
+      "thumbnail": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "3.5 kg",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 33,
+      "totalSold": 77,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "manga-books",
+        "books-river"
+      ],
+      "originalPrice": 6500
+    },
+    {
+      "name": "Attack on Titan (Vol 1-10)",
+      "slug": "attack-on-titan-vol-1-10",
+      "categorySlug": "manga-books",
+      "sku": "BR-013",
+      "description": "Attack on Titan (Vol 1-10) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 2500,
+      "thumbnail": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "1.8 kg",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 36,
+      "totalSold": 84,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "manga-books",
+        "books-river"
+      ],
+      "originalPrice": 2990
+    },
+    {
+      "name": "Chainsaw Man (Vol 1-11)",
+      "slug": "chainsaw-man-vol-1-11",
+      "categorySlug": "manga-books",
+      "sku": "BR-014",
+      "description": "Chainsaw Man (Vol 1-11) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 2700,
+      "thumbnail": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "1.9 kg",
+      "stock": 80,
+      "brand": "Books River",
+      "rating": 4.8,
+      "reviewCount": 39,
+      "totalSold": 91,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "manga-books",
+        "books-river"
+      ],
+      "originalPrice": 3200
+    },
+    {
+      "name": "Ladybird Read It Yourself Level 1 (Pack)",
+      "slug": "ladybird-read-it-yourself-level-1-pack",
+      "categorySlug": "ladybird-books",
+      "sku": "BR-015",
+      "description": "Ladybird Read It Yourself Level 1 (Pack) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 900,
+      "thumbnail": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "600 g",
+      "stock": 90,
+      "brand": "Books River",
+      "rating": 4.9,
+      "reviewCount": 2,
+      "totalSold": 98,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "ladybird-books",
+        "books-river"
+      ],
+      "originalPrice": 1100
+    },
+    {
+      "name": "Ladybird Tales: Classic Stories",
+      "slug": "ladybird-tales-classic-stories",
+      "categorySlug": "ladybird-books",
+      "sku": "BR-016",
+      "description": "Ladybird Tales: Classic Stories - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 650,
+      "thumbnail": "https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "500 g",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 5,
+      "totalSold": 105,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": false,
+      "tags": [
+        "ladybird-books",
+        "books-river"
+      ]
+    },
+    {
+      "name": "Ladybird Key Words Reading Scheme",
+      "slug": "ladybird-key-words-reading-scheme",
+      "categorySlug": "ladybird-books",
+      "sku": "BR-017",
+      "description": "Ladybird Key Words Reading Scheme - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 1200,
+      "thumbnail": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "800 g",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 8,
+      "totalSold": 112,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "ladybird-books",
+        "books-river"
+      ],
+      "originalPrice": 1500
+    },
+    {
+      "name": "Ladybird First Favourite Tales",
+      "slug": "ladybird-first-favourite-tales",
+      "categorySlug": "ladybird-books",
+      "sku": "BR-018",
+      "description": "Ladybird First Favourite Tales - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 750,
+      "thumbnail": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "550 g",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 11,
+      "totalSold": 119,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "ladybird-books",
+        "books-river"
+      ],
+      "originalPrice": 900
+    },
+    {
+      "name": "Ladybird Peppa Pig Collection",
+      "slug": "ladybird-peppa-pig-collection",
+      "categorySlug": "ladybird-books",
+      "sku": "BR-019",
+      "description": "Ladybird Peppa Pig Collection - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 850,
+      "thumbnail": "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "600 g",
+      "stock": 80,
+      "brand": "Books River",
+      "rating": 4.8,
+      "reviewCount": 14,
+      "totalSold": 6,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": false,
+      "tags": [
+        "ladybird-books",
+        "books-river"
+      ]
+    },
+    {
+      "name": "Ladybird Baby Touch Series",
+      "slug": "ladybird-baby-touch-series",
+      "categorySlug": "ladybird-books",
+      "sku": "BR-020",
+      "description": "Ladybird Baby Touch Series - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 600,
+      "thumbnail": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "400 g",
+      "stock": 90,
+      "brand": "Books River",
+      "rating": 4.9,
+      "reviewCount": 17,
+      "totalSold": 13,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "ladybird-books",
+        "books-river"
+      ],
+      "originalPrice": 720
+    },
+    {
+      "name": "My First Book of Rhymes",
+      "slug": "my-first-book-of-rhymes",
+      "categorySlug": "childrens-books",
+      "sku": "BR-021",
+      "description": "My First Book of Rhymes - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 180,
+      "thumbnail": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "300 g",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 20,
+      "totalSold": 20,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": true,
+      "isFlashSale": true,
+      "isOnSale": true,
+      "tags": [
+        "childrens-books",
+        "books-river"
+      ],
+      "originalPrice": 250
+    },
+    {
+      "name": "365 Bedtime Stories",
+      "slug": "365-bedtime-stories",
+      "categorySlug": "childrens-books",
+      "sku": "BR-022",
+      "description": "365 Bedtime Stories - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 320,
+      "thumbnail": "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "500 g",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 23,
+      "totalSold": 27,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "childrens-books",
+        "books-river"
+      ],
+      "originalPrice": 400
+    },
+    {
+      "name": "Fairy Tales Treasury",
+      "slug": "fairy-tales-treasury",
+      "categorySlug": "childrens-books",
+      "sku": "BR-023",
+      "description": "Fairy Tales Treasury - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 280,
+      "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "450 g",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 26,
+      "totalSold": 34,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": false,
+      "tags": [
+        "childrens-books",
+        "books-river"
+      ]
+    },
+    {
+      "name": "Kids Activity & Colouring Book",
+      "slug": "kids-activity-colouring-book",
+      "categorySlug": "childrens-books",
+      "sku": "BR-024",
+      "description": "Kids Activity & Colouring Book - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 150,
+      "thumbnail": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "250 g",
+      "stock": 80,
+      "brand": "Books River",
+      "rating": 4.8,
+      "reviewCount": 29,
+      "totalSold": 41,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "childrens-books",
+        "books-river"
+      ],
+      "originalPrice": 200
+    },
+    {
+      "name": "Children's Illustrated Encyclopedia",
+      "slug": "children-s-illustrated-encyclopedia",
+      "categorySlug": "childrens-books",
+      "sku": "BR-025",
+      "description": "Children's Illustrated Encyclopedia - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 650,
+      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "900 g",
+      "stock": 90,
+      "brand": "Books River",
+      "rating": 4.9,
+      "reviewCount": 32,
+      "totalSold": 48,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "childrens-books",
+        "books-river"
+      ],
+      "originalPrice": 800
+    },
+    {
+      "name": "Alphabet & Numbers Flashcards",
+      "slug": "alphabet-numbers-flashcards",
+      "categorySlug": "childrens-books",
+      "sku": "BR-026",
+      "description": "Alphabet & Numbers Flashcards - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 185,
+      "thumbnail": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "200 g",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 35,
+      "totalSold": 55,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": true,
+      "isOnSale": true,
+      "tags": [
+        "childrens-books",
+        "books-river"
+      ],
+      "originalPrice": 250
+    },
+    {
+      "name": "Sapiens: A Brief History of Humankind",
+      "slug": "sapiens-a-brief-history-of-humankind",
+      "categorySlug": "essential-books",
+      "sku": "BR-027",
+      "description": "Sapiens: A Brief History of Humankind - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 650,
+      "thumbnail": "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "600 g",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 38,
+      "totalSold": 62,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "essential-books",
+        "books-river"
+      ],
+      "originalPrice": 800
+    },
+    {
+      "name": "Atomic Habits by James Clear",
+      "slug": "atomic-habits-by-james-clear",
+      "categorySlug": "essential-books",
+      "sku": "BR-028",
+      "description": "Atomic Habits by James Clear - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 480,
+      "thumbnail": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "400 g",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 1,
+      "totalSold": 69,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "essential-books",
+        "books-river"
+      ],
+      "originalPrice": 600
+    },
+    {
+      "name": "Rich Dad Poor Dad",
+      "slug": "rich-dad-poor-dad",
+      "categorySlug": "essential-books",
+      "sku": "BR-029",
+      "description": "Rich Dad Poor Dad - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 350,
+      "thumbnail": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "350 g",
+      "stock": 80,
+      "brand": "Books River",
+      "rating": 4.8,
+      "reviewCount": 4,
+      "totalSold": 76,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "essential-books",
+        "books-river"
+      ],
+      "originalPrice": 450
+    },
+    {
+      "name": "The Alchemist by Paulo Coelho",
+      "slug": "the-alchemist-by-paulo-coelho",
+      "categorySlug": "essential-books",
+      "sku": "BR-030",
+      "description": "The Alchemist by Paulo Coelho - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 320,
+      "thumbnail": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "300 g",
+      "stock": 90,
+      "brand": "Books River",
+      "rating": 4.9,
+      "reviewCount": 7,
+      "totalSold": 83,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": false,
+      "tags": [
+        "essential-books",
+        "books-river"
+      ]
+    },
+    {
+      "name": "Ikigai: The Japanese Secret to a Long Life",
+      "slug": "ikigai-the-japanese-secret-to-a-long-life",
+      "categorySlug": "essential-books",
+      "sku": "BR-031",
+      "description": "Ikigai: The Japanese Secret to a Long Life - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 380,
+      "thumbnail": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "300 g",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 10,
+      "totalSold": 90,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": true,
+      "isOnSale": true,
+      "tags": [
+        "essential-books",
+        "books-river"
+      ],
+      "originalPrice": 480
+    },
+    {
+      "name": "Introduction to Algorithms (CLRS)",
+      "slug": "introduction-to-algorithms-clrs",
+      "categorySlug": "essential-books",
+      "sku": "BR-032",
+      "description": "Introduction to Algorithms (CLRS) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 1450,
+      "thumbnail": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "1.6 kg",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 13,
+      "totalSold": 97,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "essential-books",
+        "books-river"
+      ],
+      "originalPrice": 1800
+    },
+    {
+      "name": "Feluda Samagra - Satyajit Ray",
+      "slug": "feluda-samagra-satyajit-ray",
+      "categorySlug": "bangla-books",
+      "sku": "BR-033",
+      "description": "Feluda Samagra - Satyajit Ray - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 850,
+      "thumbnail": "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "900 g",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 16,
+      "totalSold": 104,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "bangla-books",
+        "books-river"
+      ],
+      "originalPrice": 1000
+    },
+    {
+      "name": "Himu Samagra - Humayun Ahmed",
+      "slug": "himu-samagra-humayun-ahmed",
+      "categorySlug": "bangla-books",
+      "sku": "BR-034",
+      "description": "Himu Samagra - Humayun Ahmed - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 720,
+      "thumbnail": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "800 g",
+      "stock": 80,
+      "brand": "Books River",
+      "rating": 4.8,
+      "reviewCount": 19,
+      "totalSold": 111,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "bangla-books",
+        "books-river"
+      ],
+      "originalPrice": 900
+    },
+    {
+      "name": "Chander Pahar - Bibhutibhushan",
+      "slug": "chander-pahar-bibhutibhushan",
+      "categorySlug": "bangla-books",
+      "sku": "BR-035",
+      "description": "Chander Pahar - Bibhutibhushan - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 250,
+      "thumbnail": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "300 g",
+      "stock": 90,
+      "brand": "Books River",
+      "rating": 4.9,
+      "reviewCount": 22,
+      "totalSold": 118,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": false,
+      "tags": [
+        "bangla-books",
+        "books-river"
+      ]
+    },
+    {
+      "name": "Byomkesh Samagra - Sharadindu",
+      "slug": "byomkesh-samagra-sharadindu",
+      "categorySlug": "bangla-books",
+      "sku": "BR-036",
+      "description": "Byomkesh Samagra - Sharadindu - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 780,
+      "thumbnail": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "850 g",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 25,
+      "totalSold": 5,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": true,
+      "isOnSale": true,
+      "tags": [
+        "bangla-books",
+        "books-river"
+      ],
+      "originalPrice": 950
+    },
+    {
+      "name": "Pather Panchali",
+      "slug": "pather-panchali",
+      "categorySlug": "bangla-books",
+      "sku": "BR-037",
+      "description": "Pather Panchali - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 300,
+      "thumbnail": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "320 g",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 28,
+      "totalSold": 12,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "bangla-books",
+        "books-river"
+      ],
+      "originalPrice": 380
+    },
+    {
+      "name": "Sherlock Holmes Samagra (Bangla)",
+      "slug": "sherlock-holmes-samagra-bangla",
+      "categorySlug": "bangla-books",
+      "sku": "BR-038",
+      "description": "Sherlock Holmes Samagra (Bangla) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 650,
+      "thumbnail": "https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "700 g",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 31,
+      "totalSold": 19,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "bangla-books",
+        "books-river"
+      ],
+      "originalPrice": 800
+    },
+    {
+      "name": "Premium Gel Pen Set (10 pcs)",
+      "slug": "premium-gel-pen-set-10-pcs",
+      "categorySlug": "stationery",
+      "sku": "BR-039",
+      "description": "Premium Gel Pen Set (10 pcs) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 250,
+      "thumbnail": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "200 g",
+      "stock": 80,
+      "brand": "Books River",
+      "rating": 4.8,
+      "reviewCount": 34,
+      "totalSold": 26,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "stationery",
+        "books-river"
+      ],
+      "originalPrice": 320
+    },
+    {
+      "name": "Faber-Castell Colour Pencils (24)",
+      "slug": "faber-castell-colour-pencils-24",
+      "categorySlug": "stationery",
+      "sku": "BR-040",
+      "description": "Faber-Castell Colour Pencils (24) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 350,
+      "thumbnail": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "250 g",
+      "stock": 90,
+      "brand": "Books River",
+      "rating": 4.9,
+      "reviewCount": 37,
+      "totalSold": 33,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "stationery",
+        "books-river"
+      ],
+      "originalPrice": 420
+    },
+    {
+      "name": "Sticky Notes Value Pack",
+      "slug": "sticky-notes-value-pack",
+      "categorySlug": "stationery",
+      "sku": "BR-041",
+      "description": "Sticky Notes Value Pack - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 120,
+      "thumbnail": "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "150 g",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 0,
+      "totalSold": 40,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": true,
+      "isFlashSale": true,
+      "isOnSale": true,
+      "tags": [
+        "stationery",
+        "books-river"
+      ],
+      "originalPrice": 160
+    },
+    {
+      "name": "Geometry Box Set",
+      "slug": "geometry-box-set",
+      "categorySlug": "stationery",
+      "sku": "BR-042",
+      "description": "Geometry Box Set - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 220,
+      "thumbnail": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "200 g",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 3,
+      "totalSold": 47,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "stationery",
+        "books-river"
+      ],
+      "originalPrice": 280
+    },
+    {
+      "name": "Watercolour Paint Set (12 shades)",
+      "slug": "watercolour-paint-set-12-shades",
+      "categorySlug": "stationery",
+      "sku": "BR-043",
+      "description": "Watercolour Paint Set (12 shades) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 450,
+      "thumbnail": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "350 g",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 6,
+      "totalSold": 54,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "stationery",
+        "books-river"
+      ],
+      "originalPrice": 550
+    },
+    {
+      "name": "A5 Hardcover Notebook",
+      "slug": "a5-hardcover-notebook",
+      "categorySlug": "notebooks",
+      "sku": "BR-044",
+      "description": "A5 Hardcover Notebook - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 180,
+      "thumbnail": "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "300 g",
+      "stock": 80,
+      "brand": "Books River",
+      "rating": 4.8,
+      "reviewCount": 9,
+      "totalSold": 61,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": false,
+      "tags": [
+        "notebooks",
+        "books-river"
+      ]
+    },
+    {
+      "name": "Premium Leather Diary 2026",
+      "slug": "premium-leather-diary-2026",
+      "categorySlug": "notebooks",
+      "sku": "BR-045",
+      "description": "Premium Leather Diary 2026 - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 550,
+      "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "500 g",
+      "stock": 90,
+      "brand": "Books River",
+      "rating": 4.9,
+      "reviewCount": 12,
+      "totalSold": 68,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "notebooks",
+        "books-river"
+      ],
+      "originalPrice": 700
+    },
+    {
+      "name": "Spiral Exercise Book (Pack of 5)",
+      "slug": "spiral-exercise-book-pack-of-5",
+      "categorySlug": "notebooks",
+      "sku": "BR-046",
+      "description": "Spiral Exercise Book (Pack of 5) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 320,
+      "thumbnail": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "800 g",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 15,
+      "totalSold": 75,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": true,
+      "isOnSale": true,
+      "tags": [
+        "notebooks",
+        "books-river"
+      ],
+      "originalPrice": 400
+    },
+    {
+      "name": "Dotted Bullet Journal",
+      "slug": "dotted-bullet-journal",
+      "categorySlug": "notebooks",
+      "sku": "BR-047",
+      "description": "Dotted Bullet Journal - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 420,
+      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "350 g",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 18,
+      "totalSold": 82,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "notebooks",
+        "books-river"
+      ],
+      "originalPrice": 520
+    },
+    {
+      "name": "Rechargeable LED Book Light",
+      "slug": "rechargeable-led-book-light",
+      "categorySlug": "gadget-others",
+      "sku": "BR-048",
+      "description": "Rechargeable LED Book Light - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 380,
+      "thumbnail": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "120 g",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 21,
+      "totalSold": 89,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "gadget-others",
+        "books-river"
+      ],
+      "originalPrice": 500
+    },
+    {
+      "name": "Leather Bookmark Set (5 pcs)",
+      "slug": "leather-bookmark-set-5-pcs",
+      "categorySlug": "gadget-others",
+      "sku": "BR-049",
+      "description": "Leather Bookmark Set (5 pcs) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 200,
+      "thumbnail": "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "60 g",
+      "stock": 80,
+      "brand": "Books River",
+      "rating": 4.8,
+      "reviewCount": 24,
+      "totalSold": 96,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": false,
+      "tags": [
+        "gadget-others",
+        "books-river"
+      ]
+    },
+    {
+      "name": "Adjustable Wooden Book Stand",
+      "slug": "adjustable-wooden-book-stand",
+      "categorySlug": "gadget-others",
+      "sku": "BR-050",
+      "description": "Adjustable Wooden Book Stand - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 650,
+      "thumbnail": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "700 g",
+      "stock": 90,
+      "brand": "Books River",
+      "rating": 4.9,
+      "reviewCount": 27,
+      "totalSold": 103,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "gadget-others",
+        "books-river"
+      ],
+      "originalPrice": 800
+    },
+    {
+      "name": "Blue-light Reading Glasses",
+      "slug": "blue-light-reading-glasses",
+      "categorySlug": "gadget-others",
+      "sku": "BR-051",
+      "description": "Blue-light Reading Glasses - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 550,
+      "thumbnail": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "90 g",
+      "stock": 50,
+      "brand": "Books River",
+      "rating": 4.5,
+      "reviewCount": 30,
+      "totalSold": 110,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": false,
+      "isFlashSale": true,
+      "isOnSale": true,
+      "tags": [
+        "gadget-others",
+        "books-river"
+      ],
+      "originalPrice": 700
+    },
+    {
+      "name": "Decorative Bookends (Pair)",
+      "slug": "decorative-bookends-pair",
+      "categorySlug": "gadget-others",
+      "sku": "BR-052",
+      "description": "Decorative Bookends (Pair) - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 720,
+      "thumbnail": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "1.1 kg",
+      "stock": 60,
+      "brand": "Books River",
+      "rating": 4.6,
+      "reviewCount": 33,
+      "totalSold": 117,
+      "isNewProduct": true,
+      "isFeatured": true,
+      "isBestSelling": false,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "gadget-others",
+        "books-river"
+      ],
+      "originalPrice": 900
+    },
+    {
+      "name": "Premium Book Sleeve / Cover",
+      "slug": "premium-book-sleeve-cover",
+      "categorySlug": "gadget-others",
+      "sku": "BR-053",
+      "description": "Premium Book Sleeve / Cover - available now at Books River. 100% genuine copy with fast home delivery across Bangladesh and Cash on Delivery available.",
+      "price": 420,
+      "thumbnail": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&auto=format&fit=crop&q=80"
+      ],
+      "priceType": "fixed",
+      "unit": "piece",
+      "weight": "150 g",
+      "stock": 70,
+      "brand": "Books River",
+      "rating": 4.7,
+      "reviewCount": 36,
+      "totalSold": 4,
+      "isNewProduct": true,
+      "isFeatured": false,
+      "isBestSelling": true,
+      "isFlashSale": false,
+      "isOnSale": true,
+      "tags": [
+        "gadget-others",
+        "books-river"
+      ],
+      "originalPrice": 520
+    }
+  ],
+  "coupons": [
+    {
+      "code": "WELCOME10",
+      "description": "10% off your first order",
+      "discountType": "percentage",
+      "discountValue": 10,
+      "maxDiscount": 200,
+      "minOrderAmount": 500,
+      "usageLimit": 1000,
+      "expiresAt": "2027-12-31T23:59:59.000Z",
+      "isActive": true,
+      "applicableTo": "all"
+    },
+    {
+      "code": "FREESHIP",
+      "description": "Free shipping over 1000tk",
+      "discountType": "fixed",
+      "discountValue": 60,
+      "minOrderAmount": 1000,
+      "usageLimit": null,
+      "expiresAt": "2027-12-31T23:59:59.000Z",
+      "isActive": true,
+      "applicableTo": "all"
+    }
+  ],
+  "shipping": {
+    "settings": {
+      "freeShippingThreshold": 1499,
+      "freeShippingByThresholdEnabled": true,
+      "defaultInsideDhakaRate": 60,
+      "defaultOutsideDhakaRate": 120,
+      "defaultEstimatedDays": "2-4 days"
+    },
+    "zones": [
+      {
+        "name": "Inside Dhaka",
+        "regions": [
+          "Dhaka"
+        ],
+        "rate": {
+          "name": "Inside Dhaka",
+          "price": 60,
+          "freeShippingMinimum": 1499,
+          "estimatedDays": "1-2 days"
+        }
+      },
+      {
+        "name": "Outside Dhaka",
+        "regions": [
+          "All Bangladesh"
+        ],
+        "rate": {
+          "name": "Outside Dhaka",
+          "price": 120,
+          "freeShippingMinimum": 1499,
+          "estimatedDays": "2-4 days"
+        }
+      }
+    ]
+  },
+  "wholesaleCustomers": [],
+  "siteContent": {
+    "ticker": [
+      {
+        "text": "সারাদেশে হোম ডেলিভারি",
+        "emoji": "🚚",
+        "active": true,
+        "order": 1
+      },
+      {
+        "text": "৳১৪৯৯+ অর্ডারে ফ্রি ডেলিভারি",
+        "emoji": "🎁",
+        "active": true,
+        "order": 2
+      },
+      {
+        "text": "কমিকস · মাঙ্গা · শিশুতোষ · একাডেমিক · বাংলা বই",
+        "emoji": "📚",
+        "active": true,
+        "order": 3
+      },
+      {
+        "text": "ক্যাশ অন ডেলিভারি — সারা বাংলাদেশ",
+        "emoji": "💵",
+        "active": true,
+        "order": 4
+      }
+    ],
+    "general": {
+      "storeName": "Books River",
+      "tagline": "The Reading Journey",
+      "currency": "BDT"
+    },
+    "contact": {
+      "phone": "01833389291",
+      "email": "sakil.dazuka@gmail.com",
+      "whatsapp": "01833389291",
+      "address": "Dhaka, Bangladesh",
+      "website": "https://booksriver.com",
+      "socials": [
+        {
+          "label": "facebook",
+          "url": "https://www.facebook.com/BooksRiver"
+        },
+        {
+          "label": "whatsapp",
+          "url": "https://wa.me/8801833389291"
+        }
+      ]
+    },
+    "floating": {
+      "phone": "01833389291",
+      "whatsapp": "01833389291",
+      "showPhone": true,
+      "showWhatsapp": true,
+      "showMessenger": false
+    },
+    "footer": {
+      "companyName": "Books River",
+      "copyright": "",
+      "aboutText": "Books River is your trusted online bookstore in Bangladesh - comics, manga, children's books, curriculum & essential books, stationery and more, delivered nationwide."
+    },
+    "seo": {
+      "title": "Books River - The Reading Journey",
+      "description": "Your trusted online bookstore in Bangladesh - comics, manga, children's & curriculum books, stationery and more.",
+      "keywords": "books river, booksriver, online bookstore, comics, manga, children books, stationery, bangladesh"
+    },
+    "theme": {
+      "primaryColor": "#F08418",
+      "secondaryColor": "#F05448",
+      "logoUrl": "/Books-River-Logo.png",
+      "faviconUrl": "/Books-River-Logo.png"
+    },
+    "defaultTagline": "The Reading Journey",
+    "collectionBanners": [
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&auto=format&fit=crop&q=80",
+        "title": "কমিকস কালেকশন",
+        "subtitle": "টিনটিন · চাচা চৌধুরী · মাঙ্গা · আরও অনেক",
+        "ctaLabel": "Explore",
+        "link": "/products?category=comic-books",
+        "active": true,
+        "order": 0
+      },
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=800&auto=format&fit=crop&q=80",
+        "title": "একাডেমিক ও শিশুতোষ বই",
+        "subtitle": "Shop By Class · By Curriculum · Children's Books",
+        "ctaLabel": "Shop Now",
+        "link": "/products?category=childrens-books",
+        "active": true,
+        "order": 1
+      }
+    ]
+  }
+}
