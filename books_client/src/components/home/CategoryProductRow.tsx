@@ -6,6 +6,8 @@ import SectionHeader from './SectionHeader';
 import NewProductCard from '@/components/shared/NewProductCard';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 
+import ProductSkeleton from '@/components/shared/ProductSkeleton';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 interface CategoryProductRowProps {
@@ -71,35 +73,43 @@ const CategoryProductRow: React.FC<CategoryProductRowProps> = ({
                     ref={scrollRef}
                     className={`flex gap-2 sm:gap-4 overflow-x-auto pb-2 scrollbar-hide scroll-smooth px-1 transition-opacity duration-200 ${isLoading ? 'opacity-60' : 'opacity-100'}`}
                 >
-                    {products.map((product) => (
-                        <div
-                            key={product._id}
-                            className="flex-shrink-0 w-[155px] sm:w-[180px] md:w-[195px] lg:w-[calc((100%-80px)/6)]"
-                        >
-                            <NewProductCard
-                                product={{
-                                    id: product._id,
-                                    slug: product.slug,
-                                    name: product.name,
-                                    image: product.thumbnail || product.images?.[0] || '',
-                                    price: product.price,
-                                    originalPrice: product.originalPrice || undefined,
-                                    discount: product.discount,
-                                    rating: product.rating,
-                                    reviews: product.reviewCount,
-                                    warranty: product.tagline || product.brand || 'Lower price than others but quality higher',
-                                    categoryName: product.category?.name || categoryName,
-                                    priceType: product.priceType || 'negotiable',
-                                    sold: product.totalSold || 0,
-                                    likeCount: product.likeCount || 0,
-                                    commentCount: product.commentCount || 0,
-                                    shareCount: product.shareCount || 0,
-                                    viewCount: product.viewCount || 0,
-                                    reviewCount: product.reviewCount || 0,
-                                }}
-                            />
-                        </div>
-                    ))}
+                    {isLoading && products.length === 0 ? (
+                        [...Array(6)].map((_, i) => (
+                            <div key={`cat-skel-${i}`} className="flex-shrink-0 w-[155px] sm:w-[180px] md:w-[195px] lg:w-[calc((100%-80px)/6)] h-[280px]">
+                                <ProductSkeleton />
+                            </div>
+                        ))
+                    ) : (
+                        products.map((product) => (
+                            <div
+                                key={product._id}
+                                className="flex-shrink-0 w-[155px] sm:w-[180px] md:w-[195px] lg:w-[calc((100%-80px)/6)]"
+                            >
+                                <NewProductCard
+                                    product={{
+                                        id: product._id,
+                                        slug: product.slug,
+                                        name: product.name,
+                                        image: product.thumbnail || product.images?.[0] || '',
+                                        price: product.price,
+                                        originalPrice: product.originalPrice || undefined,
+                                        discount: product.discount,
+                                        rating: product.rating,
+                                        reviews: product.reviewCount,
+                                        warranty: product.tagline || product.brand || 'Lower price than others but quality higher',
+                                        categoryName: product.category?.name || categoryName,
+                                        priceType: product.priceType || 'negotiable',
+                                        sold: product.totalSold || 0,
+                                        likeCount: product.likeCount || 0,
+                                        commentCount: product.commentCount || 0,
+                                        shareCount: product.shareCount || 0,
+                                        viewCount: product.viewCount || 0,
+                                        reviewCount: product.reviewCount || 0,
+                                    }}
+                                />
+                            </div>
+                        ))
+                    )}
                 </div>
 
                 {/* Right Arrow Button */}

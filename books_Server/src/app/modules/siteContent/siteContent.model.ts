@@ -67,14 +67,14 @@ const siteContentSchema = new Schema({
 
     // ── General Store Info ──
     general: {
-        storeName: { type: String, default: 'Bichitra Point' },
+        storeName: { type: String, default: 'Books River' },
         tagline: { type: String, default: 'Your trusted online marketplace' },
         currency: { type: String, default: 'BDT' },
     },
 
     // ── Footer ──
     footer: {
-        companyName: { type: String, default: 'Bichitra Point' },
+        companyName: { type: String, default: 'Books River' },
         copyright: { type: String, default: '' },
         aboutText: { type: String, default: '' },
         links: [{
@@ -88,9 +88,9 @@ const siteContentSchema = new Schema({
 
     // ── SEO / Meta ──
     seo: {
-        title: { type: String, default: 'Bichitra Point - Your trusted online marketplace' },
-        description: { type: String, default: 'Shop the latest products with amazing deals at Bichitra Point.' },
-        keywords: { type: String, default: 'bichitra point, bichitrapoint, ecommerce, online shopping' },
+        title: { type: String, default: 'Books River - The Reading Journey' },
+        description: { type: String, default: 'Shop the latest books with amazing deals at Books River.' },
+        keywords: { type: String, default: 'books river, booksriver, books, online bookshop, english medium books' },
     },
 
     // ── Announcement Bar ──

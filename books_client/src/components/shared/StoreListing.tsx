@@ -85,6 +85,8 @@ const FilterPanel: React.FC<{
         return brands.filter(b => b.toLowerCase().includes(q));
     }, [brands, brandSearch]);
 
+    const [expandedCat, setExpandedCat] = useState<string | null>(null);
+
     // Build a 2-level tree: each root category carries its sub-categories so the
     // filter can show them nested/indented underneath their parent.
     const categoryTree = useMemo(() => {
@@ -97,35 +99,56 @@ const FilterPanel: React.FC<{
     }, [categories]);
 
     // One filter row — reused for root + (indented) sub-category rows.
-    const renderCategoryRow = (cat: any, isChild = false) => {
+    const renderCategoryRow = (cat: any, isChild = false, hasChildren = false) => {
         const active = cat._id === '' ? !selectedCategory : selectedCategory === cat._id;
+        const isExpanded = expandedCat === cat._id;
+
         return (
             <li key={cat._id || 'all'}>
-                <label className={`flex items-center gap-2.5 px-2 py-1.5 rounded-md cursor-pointer group transition-colors hover:bg-gray-50 ${isChild ? 'pl-7' : ''}`}>
-                    <span
-                        onClick={() => onCategorySelect(cat._id)}
-                        className="shrink-0 w-4 h-4 rounded border flex items-center justify-center transition-all"
-                        style={active
-                            ? { background: 'var(--color-primary)', borderColor: 'var(--color-primary)' }
-                            : { background: '#fff', borderColor: '#d1d5db' }}
-                    >
-                        {active && (
-                            <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
-                                <path d="M1 3.5L3.5 6L8 1" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
+                <div className={`flex items-center justify-between px-2 py-1.5 rounded-md transition-colors hover:bg-gray-50 ${isChild ? 'pl-7' : ''}`}>
+                    <label className="flex items-center gap-2.5 cursor-pointer flex-1 min-w-0 group">
+                        <span
+                            onClick={() => onCategorySelect(cat._id)}
+                            className="shrink-0 w-4 h-4 rounded border flex items-center justify-center transition-all"
+                            style={active
+                                ? { background: 'var(--color-primary)', borderColor: 'var(--color-primary)' }
+                                : { background: '#fff', borderColor: '#d1d5db' }}
+                        >
+                            {active && (
+                                <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
+                                    <path d="M1 3.5L3.5 6L8 1" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            )}
+                        </span>
+                        <span
+                            onClick={() => onCategorySelect(cat._id)}
+                            className={`flex-1 leading-snug transition-colors select-none ${isChild ? 'text-[13px]' : 'text-sm'} truncate`}
+                            style={active ? { color: 'var(--color-primary)', fontWeight: 600 } : { color: isChild ? '#6b7280' : '#4b5563' }}
+                        >
+                            {isChild && <span className="text-gray-300 mr-1">└</span>}{cat.name}
+                        </span>
+                        {cat.productCount > 0 && (
+                            <span className="text-[10px] text-gray-400 tabular-nums shrink-0 mr-1">{cat.productCount}</span>
                         )}
-                    </span>
-                    <span
-                        onClick={() => onCategorySelect(cat._id)}
-                        className={`flex-1 leading-snug transition-colors select-none ${isChild ? 'text-[13px]' : 'text-sm'}`}
-                        style={active ? { color: 'var(--color-primary)', fontWeight: 600 } : { color: isChild ? '#6b7280' : '#4b5563' }}
-                    >
-                        {isChild && <span className="text-gray-300 mr-1">└</span>}{cat.name}
-                    </span>
-                    {cat.productCount > 0 && (
-                        <span className="text-[10px] text-gray-400 tabular-nums">{cat.productCount}</span>
+                    </label>
+                    
+                    {/* Accordion Toggle (only for root categories with children) */}
+                    {hasChildren && (
+                        <button 
+                            type="button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setExpandedCat(isExpanded ? null : cat._id);
+                            }}
+                            className="shrink-0 p-1 text-gray-400 hover:text-gray-600 rounded-md hover:bg-gray-100 transition-colors"
+                        >
+                            <LuChevronDown 
+                                size={14} 
+                                className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : 'rotate-0'}`} 
+                            />
+                        </button>
                     )}
-                </label>
+                </div>
             </li>
         );
     };
@@ -164,12 +187,21 @@ const FilterPanel: React.FC<{
                     ) : (
                         <ul className="space-y-0.5">
                             {renderCategoryRow({ _id: '', name: 'All Categories', productCount: 0 })}
-                            {categoryTree.map((root: any) => (
-                                <React.Fragment key={root._id}>
-                                    {renderCategoryRow(root)}
-                                    {root.children.map((child: any) => renderCategoryRow(child, true))}
-                                </React.Fragment>
-                            ))}
+                            {categoryTree.map((root: any) => {
+                                const hasChildren = root.children && root.children.length > 0;
+                                const isExpanded = expandedCat === root._id;
+                                
+                                return (
+                                    <React.Fragment key={root._id}>
+                                        {renderCategoryRow(root, false, hasChildren)}
+                                        {hasChildren && isExpanded && (
+                                            <div className="animate-fadeIn mt-0.5 mb-1 bg-gray-50/50 rounded-md py-1 border-l-2 border-l-gray-100 ml-3">
+                                                {root.children.map((child: any) => renderCategoryRow(child, true, false))}
+                                            </div>
+                                        )}
+                                    </React.Fragment>
+                                );
+                            })}
                         </ul>
                     )}
                 </div>

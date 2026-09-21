@@ -89,18 +89,20 @@ const ProductService = {
         const rawCategory = typeof query.category === 'string' ? query.category.trim() : '';
         let categoryFilter: Record<string, unknown> | undefined;
         if (rawCategory && rawCategory.toLowerCase() !== 'all') {
-            const isId = /^[0-9a-fA-F]{24}$/.test(rawCategory);
+            const rawCats = rawCategory.split(',').map(c => c.trim()).filter(Boolean);
+            const idCats = rawCats.filter(c => /^[0-9a-fA-F]{24}$/.test(c));
+            
             const matchingCats = await Category.find({
                 $or: [
-                    ...(isId ? [{ _id: rawCategory }] : []),
-                    { slug: rawCategory },
+                    ...(idCats.length > 0 ? [{ _id: { $in: idCats } }] : []),
+                    { slug: { $in: rawCats } },
                 ],
             }).select('_id');
             const catIds = matchingCats.map((c) => c._id);
             if (catIds.length > 0) {
                 categoryFilter = { $or: [{ category: { $in: catIds } }, { subCategory: { $in: catIds } }] };
             } else {
-                categoryFilter = { $or: [{ category: rawCategory }, { subCategory: rawCategory }] };
+                categoryFilter = { $or: [{ category: { $in: rawCats } }, { subCategory: { $in: rawCats } }] };
             }
         }
         // Remove raw category so QueryBuilder.filter() doesn't re-add a literal match.

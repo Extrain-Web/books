@@ -8,6 +8,7 @@ import { useSearchParams } from 'next/navigation';
 import NewProductCard from '@/components/shared/NewProductCard';
 import { useGetProductsQuery } from '@/redux/api/productApi';
 import { useGetCategoriesQuery } from '@/redux/api/categoryApi';
+import ProductSkeleton from '@/components/shared/ProductSkeleton';
 import { useGetSiteContentQuery } from '@/redux/api/siteContentApi';
 import { LuX, LuSearch, LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 import HeroSection from './HeroSection';
@@ -308,31 +309,39 @@ const NewHomePage: React.FC = () => {
                                 ref={popularScrollRef}
                                 className={`flex gap-2 sm:gap-4 overflow-x-auto pb-2 scrollbar-hide scroll-smooth px-1 transition-opacity duration-200 ${isPopularFetching ? 'opacity-60' : 'opacity-100'}`}
                             >
-                                {popularProducts.slice(0, 12).map((product: any) => (
-                                    <div key={`pop-${product._id}`} className="flex-shrink-0 w-[155px] sm:w-[180px] md:w-[195px] lg:w-[calc((100%-80px)/6)]">
-                                        <NewProductCard
-                                            product={{
-                                                id: product._id,
-                                                slug: product.slug,
-                                                name: product.name,
-                                                image: product.thumbnail || product.images?.[0] || '',
-                                                price: product.price,
-                                                originalPrice: product.originalPrice || undefined,
-                                                discount: product.discount,
-                                                rating: product.rating,
-                                                reviews: product.reviewCount,
-                                                warranty: product.tagline || product.brand || 'Lower price than others but quality higher',
-                                                categoryName: product.category?.name || '',
-                                                priceType: product.priceType || 'negotiable',
-                                                sold: product.totalSold || 0,
-                                                likeCount: product.likeCount || 0,
-                                                commentCount: product.commentCount || 0,
-                                                shareCount: product.shareCount || 0,
-                                                viewCount: product.viewCount || 0,
-                                                reviewCount: product.reviewCount || 0,
-                                            }} />
-                                    </div>
-                                ))}
+                                {isPopularFetching && popularProducts.length === 0 ? (
+                                    [...Array(6)].map((_, i) => (
+                                        <div key={`pop-skel-${i}`} className="flex-shrink-0 w-[155px] sm:w-[180px] md:w-[195px] lg:w-[calc((100%-80px)/6)] h-[280px]">
+                                            <ProductSkeleton />
+                                        </div>
+                                    ))
+                                ) : (
+                                    popularProducts.slice(0, 12).map((product: any) => (
+                                        <div key={`pop-${product._id}`} className="flex-shrink-0 w-[155px] sm:w-[180px] md:w-[195px] lg:w-[calc((100%-80px)/6)]">
+                                            <NewProductCard
+                                                product={{
+                                                    id: product._id,
+                                                    slug: product.slug,
+                                                    name: product.name,
+                                                    image: product.thumbnail || product.images?.[0] || '',
+                                                    price: product.price,
+                                                    originalPrice: product.originalPrice || undefined,
+                                                    discount: product.discount,
+                                                    rating: product.rating,
+                                                    reviews: product.reviewCount,
+                                                    warranty: product.tagline || product.brand || 'Lower price than others but quality higher',
+                                                    categoryName: product.category?.name || '',
+                                                    priceType: product.priceType || 'negotiable',
+                                                    sold: product.totalSold || 0,
+                                                    likeCount: product.likeCount || 0,
+                                                    commentCount: product.commentCount || 0,
+                                                    shareCount: product.shareCount || 0,
+                                                    viewCount: product.viewCount || 0,
+                                                    reviewCount: product.reviewCount || 0,
+                                                }} />
+                                        </div>
+                                    ))
+                                )}
                             </div>
 
                             {/* Right Arrow Button */}
@@ -375,31 +384,39 @@ const NewHomePage: React.FC = () => {
                                 ref={newArrivalsScrollRef}
                                 className={`flex gap-2 sm:gap-4 overflow-x-auto pb-2 scrollbar-hide scroll-smooth px-1 transition-opacity duration-200 ${isNewArrivalsFetching ? 'opacity-60' : 'opacity-100'}`}
                             >
-                                {newArrivalsProducts.slice(0, 12).map((product: any) => (
-                                    <div key={`new-${product._id}`} className="flex-shrink-0 w-[155px] sm:w-[180px] md:w-[195px] lg:w-[calc((100%-80px)/6)]">
-                                        <NewProductCard
-                                            product={{
-                                                id: product._id,
-                                                slug: product.slug,
-                                                name: product.name,
-                                                image: product.thumbnail || product.images?.[0] || '',
-                                                price: product.price,
-                                                originalPrice: product.originalPrice || undefined,
-                                                discount: product.discount,
-                                                rating: product.rating,
-                                                reviews: product.reviewCount,
-                                                warranty: product.tagline || product.brand || 'Lower price than others but quality higher',
-                                                categoryName: product.category?.name || '',
-                                                priceType: product.priceType || 'negotiable',
-                                                sold: product.totalSold || 0,
-                                                likeCount: product.likeCount || 0,
-                                                commentCount: product.commentCount || 0,
-                                                shareCount: product.shareCount || 0,
-                                                viewCount: product.viewCount || 0,
-                                                reviewCount: product.reviewCount || 0,
-                                            }} />
-                                    </div>
-                                ))}
+                                {isNewArrivalsFetching && newArrivalsProducts.length === 0 ? (
+                                    [...Array(6)].map((_, i) => (
+                                        <div key={`new-skel-${i}`} className="flex-shrink-0 w-[155px] sm:w-[180px] md:w-[195px] lg:w-[calc((100%-80px)/6)] h-[280px]">
+                                            <ProductSkeleton />
+                                        </div>
+                                    ))
+                                ) : (
+                                    newArrivalsProducts.slice(0, 12).map((product: any) => (
+                                        <div key={`new-${product._id}`} className="flex-shrink-0 w-[155px] sm:w-[180px] md:w-[195px] lg:w-[calc((100%-80px)/6)]">
+                                            <NewProductCard
+                                                product={{
+                                                    id: product._id,
+                                                    slug: product.slug,
+                                                    name: product.name,
+                                                    image: product.thumbnail || product.images?.[0] || '',
+                                                    price: product.price,
+                                                    originalPrice: product.originalPrice || undefined,
+                                                    discount: product.discount,
+                                                    rating: product.rating,
+                                                    reviews: product.reviewCount,
+                                                    warranty: product.tagline || product.brand || 'Lower price than others but quality higher',
+                                                    categoryName: product.category?.name || '',
+                                                    priceType: product.priceType || 'negotiable',
+                                                    sold: product.totalSold || 0,
+                                                    likeCount: product.likeCount || 0,
+                                                    commentCount: product.commentCount || 0,
+                                                    shareCount: product.shareCount || 0,
+                                                    viewCount: product.viewCount || 0,
+                                                    reviewCount: product.reviewCount || 0,
+                                                }} />
+                                        </div>
+                                    ))
+                                )}
                             </div>
 
                             {/* Right Arrow Button */}
@@ -482,13 +499,9 @@ const NewHomePage: React.FC = () => {
             {/* Loading more skeleton */}
             {isLoadingMore && (
                 <div className="mt-4 sm:mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4">
-                    {[...Array(5)].map((_, i) => (
-                        <div key={`skeleton-${i}`} className="bg-white border border-gray-200 rounded-md overflow-hidden animate-pulse">
-                            <div className="aspect-[4/5] bg-gray-200" />
-                            <div className="p-4 space-y-2">
-                                <div className="h-4 bg-gray-200 rounded w-3/4" />
-                                <div className="h-3 bg-gray-200 rounded w-1/2" />
-                            </div>
+                    {[...Array(6)].map((_, i) => (
+                        <div key={`skeleton-${i}`} className="h-[280px]">
+                            <ProductSkeleton />
                         </div>
                     ))}
                 </div>

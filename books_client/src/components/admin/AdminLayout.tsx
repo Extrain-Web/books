@@ -12,7 +12,7 @@ import {
     LuShoppingCart, LuUser, LuChevronLeft,
     LuLayoutDashboard, LuChartColumn, LuTruck, LuTag, LuStar, LuMapPin,
     LuSettings, LuSearch, LuCreditCard, LuZap, LuShield, LuRefreshCw, LuMail,
-    LuBuilding2, LuMessageSquare,
+    LuBuilding2, LuMessageSquare, LuBookOpen,
 } from 'react-icons/lu';
 import NotificationBell from '@/components/notifications/NotificationBell';
 import { useSelector, useDispatch } from 'react-redux';
@@ -88,6 +88,7 @@ const menuSections: MenuSection[] = [
                     { name: 'Homepage Category Rows', href: '/dashboard/admin/site-content?tab=categoryRows' },
                 ]
             },
+            { name: 'Curriculum Pages', href: '/dashboard/admin/curriculum', icon: LuBookOpen, submenu: null },
         ],
     },
     // Promotions & engagement
@@ -173,7 +174,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
     const isParentActive = (item: typeof allMenuItems[0]) =>
         item.submenu ? item.submenu.some(s => pathname.startsWith(s.href)) : pathname === item.href;
 
-    const Sidebar = () => (
+    const renderSidebar = () => (
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             {/* Logo */}
             <div style={{
@@ -340,7 +341,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                     background: '#1E293B', borderRight: '1px solid #334155', zIndex: 50, overflowY: 'hidden',
                 }}
             >
-                <Sidebar />
+                {renderSidebar()}
             </div>
 
             {/* Mobile Sidebar */}
@@ -354,7 +355,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                     boxShadow: mobileOpen ? '4px 0 20px rgba(0,0,0,0.1)' : 'none',
                 }}
             >
-                <Sidebar />
+                {renderSidebar()}
             </div>
 
             {/* Main Content */}

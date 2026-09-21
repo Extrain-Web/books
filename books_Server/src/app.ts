@@ -33,6 +33,7 @@ import { CourierRoutes } from './app/modules/courier/courier.routes';
 import { ImageSearchRoutes } from './app/modules/imageSearch/imageSearch.routes';
 import { WholesaleRoutes } from './app/modules/wholesale/wholesale.routes';
 import { ChatRoutes } from './app/modules/chat/chat.routes';
+import { CurriculumPageRoutes } from './app/modules/curriculumPage/curriculumPage.routes';
 
 const app: Application = express();
 
@@ -71,7 +72,7 @@ app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 app.get('/', (req: Request, res: Response) => {
     res.status(200).json({
         success: true,
-        message: 'Bichitra Point API Server is running!',
+        message: 'Books River API Server is running!',
         version: '1.0.0',
         environment: config.env,
         timestamp: new Date().toISOString(),
@@ -108,6 +109,7 @@ app.use('/api/courier', CourierRoutes);
 app.use('/api/image-search', ImageSearchRoutes);
 app.use('/api/wholesale', WholesaleRoutes);
 app.use('/api/chat', ChatRoutes);
+app.use('/api/curriculum-pages', CurriculumPageRoutes);
 
 // ── Error Handlers ────────────────────────────────────────────────
 app.use(notFoundHandler);

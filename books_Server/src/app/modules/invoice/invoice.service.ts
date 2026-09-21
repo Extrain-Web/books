@@ -21,7 +21,7 @@ export interface IInvoiceData {
     status: string;
     paymentMethod: string;
     paymentStatus: string;
-    brand: 'Bichitra Point';
+    brand: 'Books River';
     billTo: { name: string; phone: string; email: string };
     shipTo: {
         name: string;
@@ -39,7 +39,7 @@ export interface IInvoiceData {
     couponCode: string;
 }
 
-const BRAND_BLUE = '#0072BC'; // Bichitra Point Blue
+const BRAND_COLOR = '#F08418'; // Books River Orange
 const TEXT_DARK = '#0F172A';
 const TEXT_MUTED = '#64748B';
 const BORDER_COLOR = '#E2E8F0';
@@ -51,15 +51,15 @@ const fmt = (n: number): string => `BDT ${Number(n || 0).toLocaleString('en-US',
  */
 const findLogoPath = (): string | null => {
     const candidatePaths = [
-        path.resolve(process.cwd(), 'assets/Bichitra-Point-Logo-Colored.png'),
-        path.resolve(process.cwd(), 'dist/assets/Bichitra-Point-Logo-Colored.png'),
-        path.resolve(process.cwd(), 'src/assets/Bichitra-Point-Logo-Colored.png'),
-        path.resolve(__dirname, '../../assets/Bichitra-Point-Logo-Colored.png'),
-        path.resolve(__dirname, '../../../assets/Bichitra-Point-Logo-Colored.png'),
-        path.resolve(__dirname, '../../../../assets/Bichitra-Point-Logo-Colored.png'),
-        path.resolve(__dirname, '../../dist/assets/Bichitra-Point-Logo-Colored.png'),
-        path.resolve(__dirname, '../../../../bichitrapoint_client/public/Bichitra-Point-Logo-Colored.png'),
-        path.resolve(process.cwd(), '../bichitrapoint_client/public/Bichitra-Point-Logo-Colored.png'),
+        path.resolve(process.cwd(), 'assets/Books-River-Logo-Colored.png'),
+        path.resolve(process.cwd(), 'dist/assets/Books-River-Logo-Colored.png'),
+        path.resolve(process.cwd(), 'src/assets/Books-River-Logo-Colored.png'),
+        path.resolve(__dirname, '../../assets/Books-River-Logo-Colored.png'),
+        path.resolve(__dirname, '../../../assets/Books-River-Logo-Colored.png'),
+        path.resolve(__dirname, '../../../../assets/Books-River-Logo-Colored.png'),
+        path.resolve(__dirname, '../../dist/assets/Books-River-Logo-Colored.png'),
+        path.resolve(__dirname, '../../../../books_client/public/Books-River-Logo-Colored.png'),
+        path.resolve(process.cwd(), '../books_client/public/Books-River-Logo-Colored.png'),
         path.resolve(process.cwd(), 'assets/logo.png'),
         path.resolve(process.cwd(), 'dist/assets/logo.png'),
         path.resolve(process.cwd(), 'src/assets/logo.png'),
@@ -71,8 +71,8 @@ const findLogoPath = (): string | null => {
         path.resolve(process.cwd(), 'uploads/logo.png'),
         path.resolve(__dirname, '../../assets/logo.jpg'),
         path.resolve(__dirname, '../../../assets/logo.jpg'),
-        path.resolve(__dirname, '../../../../bichitrapoint_client/public/logo.jpg'),
-        path.resolve(process.cwd(), '../bichitrapoint_client/public/logo.jpg'),
+        path.resolve(__dirname, '../../../../books_client/public/logo.jpg'),
+        path.resolve(process.cwd(), '../books_client/public/logo.jpg'),
     ];
 
     for (const p of candidatePaths) {
@@ -95,12 +95,12 @@ const fetchOrder = async (orderId: string): Promise<any> => {
 };
 
 /**
- * Check if the email is a genuine user email (not auto-generated guest placeholder like phone@guest.bichitrapoint.com)
+ * Check if the email is a genuine user email (not auto-generated guest placeholder like phone@guest.booksriver.com)
  */
 const isValidCustomerEmail = (email?: string | null): boolean => {
     if (!email) return false;
     const clean = email.trim().toLowerCase();
-    if (!clean || clean.includes('@guest.bichitrapoint.com') || clean.endsWith('.guest') || clean.includes('guest@')) {
+    if (!clean || clean.includes('@guest.booksriver.com') || clean.includes('@guest.bichitrapoint.com') || clean.endsWith('.guest') || clean.includes('guest@')) {
         return false;
     }
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean);
@@ -136,7 +136,7 @@ const buildCustomerInvoice = (order: any): IInvoiceData => {
         status: order.status,
         paymentMethod: order.paymentMethod,
         paymentStatus: order.paymentStatus,
-        brand: 'Bichitra Point',
+        brand: 'Books River',
         billTo: {
             name,
             phone: ship.phone || user.phone || '',
@@ -184,10 +184,10 @@ const generateInvoicePdf = (invoice: IInvoiceData): Promise<Buffer> => {
                     doc.image(logoPath, left, 20, { width: 175 });
                 } catch (e) {
                     console.error('[InvoicePdf] Failed to embed logo:', e);
-                    doc.fillColor(TEXT_DARK).fontSize(22).font('Helvetica-Bold').text('Bichitra Point', left, 28);
+                    doc.fillColor(TEXT_DARK).fontSize(22).font('Helvetica-Bold').text('Books River', left, 28);
                 }
             } else {
-                doc.fillColor(TEXT_DARK).fontSize(22).font('Helvetica-Bold').text('Bichitra Point', left, 28);
+                doc.fillColor(TEXT_DARK).fontSize(22).font('Helvetica-Bold').text('Books River', left, 28);
             }
 
             const dateStr = new Date(invoice.date).toLocaleDateString('en-GB', {
@@ -198,10 +198,10 @@ const generateInvoicePdf = (invoice: IInvoiceData): Promise<Buffer> => {
             doc.text(`Order: ${invoice.orderId}`, left, 52, { width: contentWidth, align: 'right' });
 
             // Header Separator Line
-            doc.moveTo(left, 76).lineTo(right, 76).lineWidth(1.5).strokeColor(BRAND_BLUE).stroke();
+            doc.moveTo(left, 76).lineTo(right, 76).lineWidth(1.5).strokeColor(BRAND_COLOR).stroke();
 
             // Centered INVOICE title below the blue line
-            doc.fillColor(BRAND_BLUE).fontSize(14).font('Helvetica-Bold').text('INVOICE', left, 88, { width: contentWidth, align: 'center' });
+            doc.fillColor(BRAND_COLOR).fontSize(14).font('Helvetica-Bold').text('INVOICE', left, 88, { width: contentWidth, align: 'center' });
 
             let y = 114;
 
@@ -215,7 +215,7 @@ const generateInvoicePdf = (invoice: IInvoiceData): Promise<Buffer> => {
                 startY: number,
                 fields: { label: string; value: string }[]
             ): number => {
-                doc.fontSize(10).font('Helvetica-Bold').fillColor(BRAND_BLUE).text(title, x, startY);
+                doc.fontSize(10).font('Helvetica-Bold').fillColor(BRAND_COLOR).text(title, x, startY);
                 let currentY = startY + 16;
                 doc.fontSize(9);
 
@@ -271,7 +271,7 @@ const generateInvoicePdf = (invoice: IInvoiceData): Promise<Buffer> => {
             const qtyWidth = cols.total - cols.qty;
             const totalWidth = right - cols.total - 6;
 
-            doc.rect(left, y, contentWidth, 22).fill(BRAND_BLUE);
+            doc.rect(left, y, contentWidth, 22).fill(BRAND_COLOR);
             doc.fillColor('#FFFFFF').fontSize(9).font('Helvetica-Bold');
             doc.text('Item', cols.item + 6, y + 7, { width: itemWidth });
             doc.text('Price', cols.price, y + 7, { width: priceWidth, align: 'right' });
@@ -317,9 +317,9 @@ const generateInvoicePdf = (invoice: IInvoiceData): Promise<Buffer> => {
             totalRow('Subtotal', fmt(invoice.subtotal));
             if (invoice.shippingCost > 0) totalRow('Shipping', fmt(invoice.shippingCost));
             if (invoice.discount > 0) totalRow('Discount', `- ${fmt(invoice.discount)}`);
-            doc.moveTo(totalsX, y).lineTo(right, y).strokeColor(BRAND_BLUE).stroke();
+            doc.moveTo(totalsX, y).lineTo(right, y).strokeColor(BRAND_COLOR).stroke();
             y += 6;
-            totalRow('Grand Total', fmt(invoice.total), true, BRAND_BLUE);
+            totalRow('Grand Total', fmt(invoice.total), true, BRAND_COLOR);
 
             // ── Payment info ──
             y += 6;
@@ -331,7 +331,7 @@ const generateInvoicePdf = (invoice: IInvoiceData): Promise<Buffer> => {
 
             // ── Footer ──
             doc.font('Helvetica-Oblique').fontSize(9).fillColor(TEXT_MUTED)
-                .text('Thank you for shopping with Bichitra Point', left, doc.page.height - 60, {
+                .text('Thank you for shopping with Books River', left, doc.page.height - 60, {
                     width: contentWidth, align: 'center',
                 });
 
@@ -359,8 +359,8 @@ const buildInvoiceEmailHtml = (invoice: IInvoiceData): string => {
 
     return `
   <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #eee;border-radius:8px;overflow:hidden;">
-    <div style="background:${BRAND_BLUE};color:#fff;padding:24px;">
-      <h1 style="margin:0;font-size:22px;">Bichitra Point</h1>
+    <div style="background:${BRAND_COLOR};color:#fff;padding:24px;">
+      <h1 style="margin:0;font-size:22px;">Books River</h1>
       <p style="margin:4px 0 0;font-size:14px;">Invoice ${invoice.invoiceNumber}</p>
     </div>
     <div style="padding:24px;">
@@ -369,9 +369,9 @@ const buildInvoiceEmailHtml = (invoice: IInvoiceData): string => {
       <table style="width:100%;border-collapse:collapse;font-size:14px;">
         <thead>
           <tr style="background:#fafafa;">
-            <th style="padding:8px;text-align:left;border-bottom:2px solid ${BRAND_BLUE};">Item</th>
-            <th style="padding:8px;text-align:center;border-bottom:2px solid ${BRAND_BLUE};">Qty</th>
-            <th style="padding:8px;text-align:right;border-bottom:2px solid ${BRAND_BLUE};">Total</th>
+            <th style="padding:8px;text-align:left;border-bottom:2px solid ${BRAND_COLOR};">Item</th>
+            <th style="padding:8px;text-align:center;border-bottom:2px solid ${BRAND_COLOR};">Qty</th>
+            <th style="padding:8px;text-align:right;border-bottom:2px solid ${BRAND_COLOR};">Total</th>
           </tr>
         </thead>
         <tbody>${rows}</tbody>
@@ -380,12 +380,12 @@ const buildInvoiceEmailHtml = (invoice: IInvoiceData): string => {
         <tr><td style="padding:4px 8px;">Subtotal</td><td style="padding:4px 8px;text-align:right;">${fmt(invoice.subtotal)}</td></tr>
         <tr><td style="padding:4px 8px;">Shipping</td><td style="padding:4px 8px;text-align:right;">${fmt(invoice.shippingCost)}</td></tr>
         ${invoice.discount > 0 ? `<tr><td style="padding:4px 8px;">Discount</td><td style="padding:4px 8px;text-align:right;">- ${fmt(invoice.discount)}</td></tr>` : ''}
-        <tr><td style="padding:8px;font-weight:bold;color:${BRAND_BLUE};border-top:2px solid ${BRAND_BLUE};">Grand Total</td><td style="padding:8px;text-align:right;font-weight:bold;color:${BRAND_BLUE};border-top:2px solid ${BRAND_BLUE};">${fmt(invoice.total)}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold;color:${BRAND_COLOR};border-top:2px solid ${BRAND_COLOR};">Grand Total</td><td style="padding:8px;text-align:right;font-weight:bold;color:${BRAND_COLOR};border-top:2px solid ${BRAND_COLOR};">${fmt(invoice.total)}</td></tr>
       </table>
       <p style="margin:16px 0 0;color:#555;">Payment: ${invoice.paymentMethod} (${invoice.paymentStatus})</p>
     </div>
     <div style="background:#fafafa;padding:16px;text-align:center;color:#888;font-size:12px;">
-      Thank you for shopping with Bichitra Point
+      Thank you for shopping with Books River
     </div>
   </div>`;
 };
@@ -432,7 +432,7 @@ const emailInvoiceToCustomer = async (orderId: string): Promise<void> => {
         }
         await sendEmail({
             to,
-            subject: `Your Bichitra Point Invoice ${invoice.invoiceNumber}`,
+            subject: `Your Books River Invoice ${invoice.invoiceNumber}`,
             html: buildInvoiceEmailHtml(invoice),
             attachments: [
                 {
