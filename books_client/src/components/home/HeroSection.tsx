@@ -60,16 +60,24 @@ const HeroSection: React.FC = () => {
     const [cycle, setCycle] = useState(0); // restarts the progress bar after pause/manual nav
 
     /**
-     * The stage is a FIXED height at every breakpoint — it never adapts to the
-     * uploaded image. A short/wide banner used to shrink the whole hero (and a
-     * tall one stretched it), so the homepage jumped around depending on which
-     * slide was showing and which artwork the admin happened to upload.
+     * The stage takes the ARTWORK's own aspect ratio instead of a fixed height.
      *
-     * Now every banner is drawn with `object-cover` into this constant frame:
-     * the image scales up to fill it and the overflow is trimmed, exactly like a
-     * Facebook cover photo. The text overlay is positioned against the frame,
-     * not the photo, so headlines stay put whatever the artwork's proportions.
+     * It used to be a constant height at every breakpoint with the banner
+     * cover-fitted into it. Because the uploaded artwork is wide (~3:1) and the
+     * phone frame was 1.41:1, covering it blew the image up to ~785px wide
+     * inside a 367px window — over half the banner was trimmed off, ~200px from
+     * each side. Driving the stage from the image's ratio keeps the whole banner
+     * visible at every width; the max-height stops an unusually tall upload from
+     * taking over the page. The ratio is measured from the first slide, with a
+     * close fallback so nothing jumps while it loads.
      */
+    const FALLBACK_AR = 3;
+    const STAGE_MAX_H = 560;
+    const [ratio, setRatio] = useState<number | null>(null);
+    const stageAR = ratio ?? FALLBACK_AR;
+
+    // DefaultHero (shown only when no banners exist) is a designed layout rather
+    // than photo artwork, so it keeps real fixed heights.
     const STAGE_HEIGHT = 'h-[260px] sm:h-[360px] md:h-[470px] lg:h-[560px]';
 
     useEffect(() => { setActive(0); }, [images.length]);
@@ -104,7 +112,7 @@ const HeroSection: React.FC = () => {
         return (
             <section className="w-full" aria-label="Featured banners">
                 <div className="w-full">
-                    <div className={`w-full animate-pulse bg-slate-100 ${STAGE_HEIGHT}`} />
+                    <div className="w-full animate-pulse bg-slate-100" style={{ aspectRatio: FALLBACK_AR, maxHeight: STAGE_MAX_H }} />
                 </div>
             </section>
         );
@@ -124,8 +132,8 @@ const HeroSection: React.FC = () => {
                     onTouchEnd={onTouchEnd}
                     aria-roledescription="carousel"
                 >
-                    {/* Stage — a constant height; banners are cover-fitted into it. */}
-                    <div className={`relative w-full overflow-hidden ${STAGE_HEIGHT}`}>
+                    {/* Stage — sized by the artwork's aspect ratio so nothing is cropped. */}
+                    <div className="relative w-full overflow-hidden" style={{ aspectRatio: stageAR, maxHeight: STAGE_MAX_H }}>
 
                         {/* ── Crossfading banner images (+ optional text overlay) ── */}
                         {slides.map((slide, i) => {
@@ -153,6 +161,12 @@ const HeroSection: React.FC = () => {
                                         draggable={false}
                                         loading={i === 0 ? 'eager' : 'lazy'}
                                         fetchPriority={i === 0 ? 'high' : undefined}
+                                        onLoad={(e) => {
+                                            // The first banner sets the stage's proportions.
+                                            if (i !== 0) return;
+                                            const el = e.currentTarget;
+                                            if (el.naturalWidth && el.naturalHeight) setRatio(el.naturalWidth / el.naturalHeight);
+                                        }}
                                         className="h-full w-full object-cover"
                                     />
 
