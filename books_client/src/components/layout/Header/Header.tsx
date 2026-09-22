@@ -192,7 +192,7 @@ const Header: React.FC = () => {
                 }}
             >
                 <div className="container mx-auto px-3 sm:px-4">
-                    <div className="flex items-center gap-2 lg:gap-4 h-[62px] lg:h-[82px]">
+                    <div className="relative flex items-center gap-2 lg:gap-4 h-[62px] lg:h-[82px]">
 
                         {/* Menu button — first on mobile so the logo can sit centred */}
                         <button
@@ -204,8 +204,12 @@ const Header: React.FC = () => {
                             {isMobileMenuOpen ? <LuX size={24} /> : <LuMenu size={24} />}
                         </button>
 
-                        {/* Logo — centred on mobile, flush left from lg up */}
-                        <div className="flex-1 min-w-0 flex justify-center lg:flex-none lg:justify-start">
+                        {/* Logo — taken out of the flow on phones so it sits on the TRUE
+                            centre of the bar: the menu button (~36px) and the icon pair
+                            (~78px) are different widths, so a flex-centred logo lands ~21px
+                            left of centre. From md up it returns to the flow, ahead of the
+                            search box. */}
+                        <div className="absolute left-1/2 top-1/2 max-w-[55%] -translate-x-1/2 -translate-y-1/2 md:static md:left-auto md:top-auto md:max-w-none md:translate-x-0 md:translate-y-0">
                             <Link href="/" className="min-w-0 shrink" onClick={handleGoHome} aria-label={general.storeName || 'Books River — home'}>
                                 <HeaderLogo storeName={general.storeName} />
                             </Link>
@@ -250,7 +254,7 @@ const Header: React.FC = () => {
                         </div>
 
                         {/* Right icons */}
-                        <div className="flex items-center shrink-0 gap-0.5 ml-1 lg:ml-2">
+                        <div className="flex items-center shrink-0 gap-0.5 ml-auto md:ml-2">
                             {isAuthenticated && user ? (
                                 <div className="relative" ref={profileRef}>
                                     <button onClick={() => setIsProfileOpen(!isProfileOpen)} className={iconBtn} aria-label="Account">
