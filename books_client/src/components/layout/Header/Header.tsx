@@ -194,10 +194,22 @@ const Header: React.FC = () => {
                 <div className="container mx-auto px-3 sm:px-4">
                     <div className="flex items-center gap-2 lg:gap-4 h-[62px] lg:h-[82px]">
 
-                        {/* Logo */}
-                        <Link href="/" className="shrink-0" onClick={handleGoHome} aria-label={general.storeName || 'Books River — home'}>
-                            <HeaderLogo storeName={general.storeName} />
-                        </Link>
+                        {/* Menu button — first on mobile so the logo can sit centred */}
+                        <button
+                            className="lg:hidden shrink-0 -ml-1 p-2 text-slate-700 hover:text-[var(--color-primary)] rounded-md hover:bg-[var(--color-primary-lightest)] transition-colors"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            aria-label="Menu"
+                            aria-expanded={isMobileMenuOpen}
+                        >
+                            {isMobileMenuOpen ? <LuX size={24} /> : <LuMenu size={24} />}
+                        </button>
+
+                        {/* Logo — centred on mobile, flush left from lg up */}
+                        <div className="flex-1 min-w-0 flex justify-center lg:flex-none lg:justify-start">
+                            <Link href="/" className="min-w-0 shrink" onClick={handleGoHome} aria-label={general.storeName || 'Books River — home'}>
+                                <HeaderLogo storeName={general.storeName} />
+                            </Link>
+                        </div>
 
                         {/* Inline nav (desktop) */}
                         <nav className="hidden lg:flex items-center h-full shrink-0">
@@ -238,9 +250,9 @@ const Header: React.FC = () => {
                         </div>
 
                         {/* Right icons */}
-                        <div className="flex items-center shrink-0 gap-0.5 ml-auto md:ml-2">
+                        <div className="flex items-center shrink-0 gap-0.5 ml-1 lg:ml-2">
                             {isAuthenticated && user ? (
-                                <div className="relative hidden sm:block" ref={profileRef}>
+                                <div className="relative" ref={profileRef}>
                                     <button onClick={() => setIsProfileOpen(!isProfileOpen)} className={iconBtn} aria-label="Account">
                                         {user.avatar ? <img src={user.avatar} alt="" className="w-[24px] h-[24px] rounded-full object-cover ring-1 ring-gray-200" /> : <LuUser size={21} strokeWidth={1.7} />}
                                     </button>
@@ -265,7 +277,7 @@ const Header: React.FC = () => {
                                     )}
                                 </div>
                             ) : (
-                                <Link href="/login" className={`hidden sm:flex ${iconBtn}`} aria-label="Sign In"><LuUser size={21} strokeWidth={1.7} /></Link>
+                                <Link href="/login" className={`flex ${iconBtn}`} aria-label="Sign In"><LuUser size={21} strokeWidth={1.7} /></Link>
                             )}
 
                             <Link href={wishlistHref} className={`hidden lg:flex ${iconBtn}`} aria-label="Wishlist">
@@ -278,9 +290,6 @@ const Header: React.FC = () => {
                                 {cartItems.length > 0 && <span className={badgeCls} style={{ background: 'var(--color-primary)' }}>{cartItems.length > 99 ? '99+' : cartItems.length}</span>}
                             </Link>
 
-                            <button className="lg:hidden ml-0.5 p-2 text-slate-700 hover:text-[var(--color-primary)] rounded-md hover:bg-[var(--color-primary-lightest)] transition-colors" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Menu">
-                                {isMobileMenuOpen ? <LuX size={22} /> : <LuMenu size={22} />}
-                            </button>
                         </div>
                     </div>
 
@@ -326,17 +335,18 @@ const Header: React.FC = () => {
 };
 
 function HeaderLogo({ storeName }: { storeName?: string }) {
+    // Mobile: compact icon with the name stacked underneath. lg+: icon beside the name.
     return (
-        <div className="group flex items-center gap-2 select-none" aria-label={storeName || 'Books River'}>
+        <div className="group flex flex-col lg:flex-row items-center gap-0.5 lg:gap-2 min-w-0 select-none" aria-label={storeName || 'Books River'}>
             <img
                 src="/Books-River-Logo.png"
                 alt={storeName || 'Books River'}
                 draggable={false}
-                className="h-[42px] w-[42px] lg:h-[52px] lg:w-[52px] rounded-full object-cover shadow-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-105"
+                className="h-[30px] w-[30px] lg:h-[52px] lg:w-[52px] shrink-0 rounded-full object-cover shadow-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="hidden sm:flex flex-col leading-none">
-                <span className="text-[17px] lg:text-[20px] font-extrabold tracking-tight" style={{ color: '#1b2a4a' }}>{storeName || 'Books River'}</span>
-                <span className="text-[9px] lg:text-[10px] font-semibold tracking-[0.16em] uppercase mt-0.5" style={{ color: 'var(--color-primary)' }}>The Reading Journey</span>
+            <div className="flex flex-col leading-none min-w-0 items-center lg:items-start">
+                <span className="text-[12px] lg:text-[20px] font-extrabold tracking-tight truncate" style={{ color: '#1b2a4a' }}>{storeName || 'Books River'}</span>
+                <span className="hidden lg:block text-[10px] font-semibold tracking-[0.16em] uppercase mt-0.5 truncate" style={{ color: 'var(--color-primary)' }}>The Reading Journey</span>
             </div>
         </div>
     );
