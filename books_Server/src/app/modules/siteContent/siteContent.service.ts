@@ -21,11 +21,11 @@ const SiteContentService = {
                     // Not set yet — the WhatsApp card, footer live-chat link and
                     // floating button stay hidden until a number is added.
                     whatsapp: '',
-                    email: 'support@bichitrapoint.com',
-                    emails: ['support@bichitrapoint.com'],
+                    email: 'support@booksriver.com',
+                    emails: ['support@booksriver.com'],
                     address: '6 Kalabagan, Bus Stand, Dhaka-1205, Bangladesh',
                     corporateOffice: '6 Kalabagan, Bus Stand, Dhaka-1205, Bangladesh',
-                    website: 'bichitrapoint.com',
+                    website: 'booksriver.com',
                     hours: [
                         { day: 'Sunday – Saturday', time: '9:00 AM – 6:00 PM' },
                         { day: 'Friday', time: 'Closed' },
@@ -50,20 +50,20 @@ const SiteContentService = {
                     showMessenger: true,
                 },
                 general: {
-                    storeName: 'Bichitra Point',
+                    storeName: 'Books River',
                     tagline: 'Your trusted online marketplace',
                     currency: 'BDT',
                 },
                 footer: {
-                    companyName: 'Bichitra Point',
+                    companyName: 'Books River',
                     copyright: '',
                     links: [],
                 },
                 defaultTagline: 'Your trusted online marketplace',
                 seo: {
-                    title: 'Bichitra Point - Your trusted online marketplace',
-                    description: 'Shop the latest products with amazing deals at Bichitra Point. Premium quality products at best prices.',
-                    keywords: 'bichitra point, bichitrapoint, ecommerce, online shopping, best deals, products, shop',
+                    title: 'Books River - Your trusted online marketplace',
+                    description: 'Shop the latest products with amazing deals at Books River. Premium quality products at best prices.',
+                    keywords: 'bichitra point, booksriver, ecommerce, online shopping, best deals, products, shop',
                 },
                 announcement: {
                     message: '',
@@ -73,7 +73,7 @@ const SiteContentService = {
                     dismissible: true,
                 },
                 legalPages: [
-                    { slug: 'about', title: 'About Us', content: '<p>Welcome to Bichitra Point.</p>', active: true },
+                    { slug: 'about', title: 'About Us', content: '<p>Welcome to Books River.</p>', active: true },
                     { slug: 'terms', title: 'Terms & Conditions', content: '<p>Please add your Terms & Conditions content here.</p>', active: true },
                     { slug: 'privacy', title: 'Privacy Policy', content: '<p>Please add your Privacy Policy content here.</p>', active: true },
                     { slug: 'refund', title: 'Refund Policy', content: '<p>Please add your Refund Policy content here.</p>', active: true },
@@ -93,19 +93,19 @@ const SiteContentService = {
                         legalPages: [
                             {
                                 slug: 'about', title: 'About Us', active: true, lastUpdated: new Date(),
-                                content: `<h2>Welcome to Bichitra Point</h2><p>Bichitra Point is a premier retail and wholesale marketplace in Bangladesh, dedicated to providing high-quality authentic products, books, stationery, natural goods, and daily essentials.</p><h2>Our Mission</h2><p>Our mission is to deliver authentic, top-grade items with maximum reliability, fast delivery, and unmatched customer service across Bangladesh.</p><h2>Why Choose Us?</h2><ul><li><strong>100% Genuine Products:</strong> We guarantee authenticity for all items listed on our platform.</li><li><strong>Wholesale & Retail:</strong> Flexible purchasing for individual customers, schools, madrasahs, retailers, and corporate clients.</li><li><strong>Fast & Safe Shipping:</strong> Nationwide delivery with secure packaging and real-time tracking.</li><li><strong>Dedicated Customer Support:</strong> Prompt support team ready to assist you via phone, WhatsApp, and email.</li></ul><h2>Contact Us</h2><p>For wholesale inquiries or general support, reach out to us at <strong>support@bichitrapoint.com</strong> or call <strong>+880 1739-498553</strong>.</p>`,
+                                content: `<h2>Welcome to Books River</h2><p>Books River is a premier retail and wholesale marketplace in Bangladesh, dedicated to providing high-quality authentic products, books, stationery, natural goods, and daily essentials.</p><h2>Our Mission</h2><p>Our mission is to deliver authentic, top-grade items with maximum reliability, fast delivery, and unmatched customer service across Bangladesh.</p><h2>Why Choose Us?</h2><ul><li><strong>100% Genuine Products:</strong> We guarantee authenticity for all items listed on our platform.</li><li><strong>Wholesale & Retail:</strong> Flexible purchasing for individual customers, schools, madrasahs, retailers, and corporate clients.</li><li><strong>Fast & Safe Shipping:</strong> Nationwide delivery with secure packaging and real-time tracking.</li><li><strong>Dedicated Customer Support:</strong> Prompt support team ready to assist you via phone, WhatsApp, and email.</li></ul><h2>Contact Us</h2><p>For wholesale inquiries or general support, reach out to us at <strong>support@booksriver.com</strong> or call <strong>+880 1739-498553</strong>.</p>`,
                             },
                             {
                                 slug: 'terms', title: 'Terms & Conditions', active: true, lastUpdated: new Date(),
-                                content: `<h2>1. Acceptance of Terms</h2><p>By accessing and using the Bichitra Point website and its services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use our website or services.</p><p>We reserve the right to modify these terms at any time. Continued use of the website after changes constitutes acceptance of the updated terms.</p><h2>2. Services Overview</h2><p>Bichitra Point provides an online retail and wholesale marketplace connecting customers with quality products. Our services include:</p><ul><li><strong>Direct Purchase</strong> — Browse and buy products directly through our platform.</li><li><strong>Wholesale Supply</strong> — Bulk ordering for educational institutions, businesses, and retailers.</li><li><strong>Order Delivery</strong> — Nationwide reliable delivery to your address.</li><li><strong>Customer Support</strong> — Dedicated assistance with orders, payments, and product inquiries.</li></ul><h2>3. User Accounts & Registration</h2><p>To place orders, you may be required to create an account. You agree to provide accurate, current, and complete information during registration. You are responsible for maintaining the confidentiality of your account credentials.</p><h2>4. Pricing & Payment</h2><p>All prices displayed on the website are in Bangladeshi Taka (BDT). We accept Cash on Delivery (COD), bKash, Nagad, bank transfer, and cards.</p><h2>5. Contact Information</h2><p>For any queries regarding these terms, please contact us at <strong>support@bichitrapoint.com</strong> or <strong>+880 1739-498553</strong>.</p>`,
+                                content: `<h2>1. Acceptance of Terms</h2><p>By accessing and using the Books River website and its services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use our website or services.</p><p>We reserve the right to modify these terms at any time. Continued use of the website after changes constitutes acceptance of the updated terms.</p><h2>2. Services Overview</h2><p>Books River provides an online retail and wholesale marketplace connecting customers with quality products. Our services include:</p><ul><li><strong>Direct Purchase</strong> — Browse and buy products directly through our platform.</li><li><strong>Wholesale Supply</strong> — Bulk ordering for educational institutions, businesses, and retailers.</li><li><strong>Order Delivery</strong> — Nationwide reliable delivery to your address.</li><li><strong>Customer Support</strong> — Dedicated assistance with orders, payments, and product inquiries.</li></ul><h2>3. User Accounts & Registration</h2><p>To place orders, you may be required to create an account. You agree to provide accurate, current, and complete information during registration. You are responsible for maintaining the confidentiality of your account credentials.</p><h2>4. Pricing & Payment</h2><p>All prices displayed on the website are in Bangladeshi Taka (BDT). We accept Cash on Delivery (COD), bKash, Nagad, bank transfer, and cards.</p><h2>5. Contact Information</h2><p>For any queries regarding these terms, please contact us at <strong>support@booksriver.com</strong> or <strong>+880 1739-498553</strong>.</p>`,
                             },
                             {
                                 slug: 'privacy', title: 'Privacy Policy', active: true, lastUpdated: new Date(),
-                                content: `<h2>1. Information We Collect</h2><p>We collect information to provide better services to our users:</p><ul><li><strong>Personal Information:</strong> Name, email address, phone number, shipping address, and billing information.</li><li><strong>Account Data:</strong> Login credentials, order history, and preferences.</li><li><strong>Device Information:</strong> IP address, browser type, and cookies for analytics.</li></ul><h2>2. How We Use Your Information</h2><ul><li>To process, fulfill, and track your orders.</li><li>To provide customer support and service updates.</li><li>To prevent fraud and maintain system security.</li></ul><h2>3. Contact Us</h2><p>For privacy inquiries, contact us at <strong>support@bichitrapoint.com</strong>.</p>`,
+                                content: `<h2>1. Information We Collect</h2><p>We collect information to provide better services to our users:</p><ul><li><strong>Personal Information:</strong> Name, email address, phone number, shipping address, and billing information.</li><li><strong>Account Data:</strong> Login credentials, order history, and preferences.</li><li><strong>Device Information:</strong> IP address, browser type, and cookies for analytics.</li></ul><h2>2. How We Use Your Information</h2><ul><li>To process, fulfill, and track your orders.</li><li>To provide customer support and service updates.</li><li>To prevent fraud and maintain system security.</li></ul><h2>3. Contact Us</h2><p>For privacy inquiries, contact us at <strong>support@booksriver.com</strong>.</p>`,
                             },
                             {
                                 slug: 'refund', title: 'Refund Policy', active: true, lastUpdated: new Date(),
-                                content: `<h2>1. Overview</h2><p>At Bichitra Point, customer satisfaction is our top priority. This Refund Policy outlines the terms for returns and exchanges.</p><h2>2. Eligibility for Returns</h2><ul><li>Product is damaged, defective, or incorrect upon arrival.</li><li>Return request is submitted within <strong>7 days</strong> of delivery with proof of purchase.</li></ul><h2>3. Contact Us</h2><p>For refund assistance, email us at <strong>support@bichitrapoint.com</strong> or call <strong>+880 1739-498553</strong>.</p>`,
+                                content: `<h2>1. Overview</h2><p>At Books River, customer satisfaction is our top priority. This Refund Policy outlines the terms for returns and exchanges.</p><h2>2. Eligibility for Returns</h2><ul><li>Product is damaged, defective, or incorrect upon arrival.</li><li>Return request is submitted within <strong>7 days</strong> of delivery with proof of purchase.</li></ul><h2>3. Contact Us</h2><p>For refund assistance, email us at <strong>support@booksriver.com</strong> or call <strong>+880 1739-498553</strong>.</p>`,
                             },
                         ],
                     },
@@ -126,7 +126,7 @@ const SiteContentService = {
                             title: 'About Us',
                             active: true,
                             lastUpdated: new Date(),
-                            content: `<h2>Welcome to Bichitra Point</h2><p>Bichitra Point is a premier retail and wholesale marketplace in Bangladesh, dedicated to providing high-quality authentic products, books, stationery, natural goods, and daily essentials.</p><h2>Our Mission</h2><p>Our mission is to deliver authentic, top-grade items with maximum reliability, fast delivery, and unmatched customer service across Bangladesh.</p><h2>Why Choose Us?</h2><ul><li><strong>100% Genuine Products:</strong> We guarantee authenticity for all items listed on our platform.</li><li><strong>Wholesale & Retail:</strong> Flexible purchasing for individual customers, schools, madrasahs, retailers, and corporate clients.</li><li><strong>Fast & Safe Shipping:</strong> Nationwide delivery with secure packaging and real-time tracking.</li><li><strong>Dedicated Customer Support:</strong> Prompt support team ready to assist you via phone, WhatsApp, and email.</li></ul><h2>Contact Us</h2><p>For wholesale inquiries or general support, reach out to us at <strong>support@bichitrapoint.com</strong> or call <strong>+880 1739-498553</strong>.</p>`,
+                            content: `<h2>Welcome to Books River</h2><p>Books River is a premier retail and wholesale marketplace in Bangladesh, dedicated to providing high-quality authentic products, books, stationery, natural goods, and daily essentials.</p><h2>Our Mission</h2><p>Our mission is to deliver authentic, top-grade items with maximum reliability, fast delivery, and unmatched customer service across Bangladesh.</p><h2>Why Choose Us?</h2><ul><li><strong>100% Genuine Products:</strong> We guarantee authenticity for all items listed on our platform.</li><li><strong>Wholesale & Retail:</strong> Flexible purchasing for individual customers, schools, madrasahs, retailers, and corporate clients.</li><li><strong>Fast & Safe Shipping:</strong> Nationwide delivery with secure packaging and real-time tracking.</li><li><strong>Dedicated Customer Support:</strong> Prompt support team ready to assist you via phone, WhatsApp, and email.</li></ul><h2>Contact Us</h2><p>For wholesale inquiries or general support, reach out to us at <strong>support@booksriver.com</strong> or call <strong>+880 1739-498553</strong>.</p>`,
                         },
                     },
                 },
@@ -199,6 +199,28 @@ const SiteContentService = {
                 { $set: { categoryRows: defaultRows } },
                 { new: true }
             );
+        }
+
+        
+        // Auto-migrate: clear Bichitra logos
+        if (content?.theme?.logoUrl?.includes('Bichitra') || content?.theme?.faviconUrl?.includes('Bichitra') || content?.general?.storeName === 'Bichitra Point') {
+            const updateObj = {};
+            if (content?.theme?.logoUrl?.includes('Bichitra')) {
+                updateObj['theme.logoUrl'] = '';
+            }
+            if (content?.theme?.faviconUrl?.includes('Bichitra')) {
+                updateObj['theme.faviconUrl'] = '';
+            }
+            if (content?.general?.storeName === 'Bichitra Point') {
+                updateObj['general.storeName'] = 'Books River';
+            }
+            if (Object.keys(updateObj).length > 0) {
+                content = await SiteContent.findOneAndUpdate(
+                    { _key: 'main' },
+                    { $set: updateObj },
+                    { new: true }
+                );
+            }
         }
 
         return content;

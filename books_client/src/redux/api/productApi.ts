@@ -36,7 +36,19 @@ export const productApi = baseApi.injectEndpoints({
         }),
         // Public: get product by slug — Backend route: GET /api/products/slug/:slug
         getProductBySlug: builder.query({
-            query: (slug) => `/products/slug/${encodeURIComponent(String(slug).trim())}`,
+            query: (slug) => {
+                let clean = String(slug || '').trim();
+                try {
+                    while (/%[0-9a-fA-F]{2}/.test(clean)) {
+                        const prev = clean;
+                        clean = decodeURIComponent(clean);
+                        if (clean === prev) break;
+                    }
+                } catch {
+                    // ignore malformed URI
+                }
+                return `/products/slug/${encodeURIComponent(clean)}`;
+            },
             providesTags: ['Products'],
         }),
         // Public: get related products — Backend route: GET /api/products/:id/related/:categoryId

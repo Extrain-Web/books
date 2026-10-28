@@ -28,7 +28,20 @@ import {
 import { FaXTwitter, FaTiktok } from 'react-icons/fa6';
 
 export default function ProductDetailsPage() {
-    const { slug } = useParams();
+    const params = useParams();
+    const rawSlug = Array.isArray(params?.slug) ? params.slug[0] : (params?.slug || '');
+    const slug = React.useMemo(() => {
+        let s = String(rawSlug || '').trim();
+        try {
+            while (/%[0-9a-fA-F]{2}/.test(s)) {
+                const prev = s;
+                s = decodeURIComponent(s);
+                if (s === prev) break;
+            }
+        } catch {}
+        return s;
+    }, [rawSlug]);
+
     const router = useRouter();
     const dispatch = useAppDispatch();
     // const { isAuthenticated } = useAppSelector((state: any) => state.auth);
@@ -68,7 +81,7 @@ export default function ProductDetailsPage() {
     const [inquirySuccess, setInquirySuccess] = useState(false);
     const colorSwatchRef = useRef<HTMLDivElement>(null);
 
-    const { data: productData, isLoading, isError } = useGetProductBySlugQuery(slug as string, { skip: !slug });
+    const { data: productData, isLoading, isError } = useGetProductBySlugQuery(slug, { skip: !slug });
     const product = productData?.data;
     const isWishlisted = product ? isInWishlist(product._id || product.id) : false;
 

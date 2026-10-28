@@ -203,18 +203,34 @@ const ProductService = {
 
     // ── Get product by slug (or _id fallback) ───────────────────────────
     async getProductBySlug(slug: string) {
-        // Trim + tolerate leading/trailing whitespace in stored slugs (legacy data
-        // sometimes had trailing spaces that the URL bar drops → mismatch → 404).
-        const clean = String(slug || '').trim();
+        let clean = String(slug || '').trim();
+
+        // Safely decode percent-encoded and double-encoded URLs (e.g. Bengali Unicode characters)
+        try {
+            while (/%[0-9a-fA-F]{2}/.test(clean)) {
+                const prev = clean;
+                clean = decodeURIComponent(clean);
+                if (clean === prev) break;
+            }
+        } catch {
+            // Keep clean as is if malformed URI sequence
+        }
+        clean = clean.trim();
+
         const escaped = clean.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const normalized = clean.replace(/-+/g, '-');
+        const escapedNormalized = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const isId = /^[0-9a-fA-F]{24}$/.test(clean);
+
         const product = await Product.findOne({
             $or: [
                 { slug: new RegExp('^\\s*' + escaped + '\\s*$', 'i') },
+                ...(escaped !== escapedNormalized ? [{ slug: new RegExp('^\\s*' + escapedNormalized + '\\s*$', 'i') }] : []),
                 ...(isId ? [{ _id: clean }] : []),
             ],
             isDeleted: { $ne: true },
         }).populate('category', 'name slug');
+
         if (!product) throw new AppError(404, 'Product not found');
         await Product.findByIdAndUpdate(product._id, { $inc: { viewCount: 1 } });
         return product;

@@ -5,8 +5,16 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
 async function getProduct(slug: string): Promise<any | null> {
     try {
+        let clean = String(slug || '').trim();
+        try {
+            while (/%[0-9a-fA-F]{2}/.test(clean)) {
+                const prev = clean;
+                clean = decodeURIComponent(clean);
+                if (clean === prev) break;
+            }
+        } catch {}
         // Public product detail route — GET /api/products/slug/:slug
-        const res = await fetch(`${API_BASE}/products/slug/${slug}`, {
+        const res = await fetch(`${API_BASE}/products/slug/${encodeURIComponent(clean)}`, {
             next: { revalidate: 300 },
         });
         if (!res.ok) return null;

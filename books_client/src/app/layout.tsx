@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   keywords: ["books river", "booksriver", "online bookstore", "comics", "manga", "children books", "stationery", "bangladesh", "books"],
   applicationName: "Books River",
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: '/Books-River-Logo.png',
+    shortcut: '/Books-River-Logo.png',
+    apple: '/Books-River-Logo.png',
   },
   openGraph: {
     type: "website",
