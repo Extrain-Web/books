@@ -217,6 +217,10 @@ const ProductService = {
         }
         clean = clean.trim();
 
+        // Normalize to Unicode NFC so Bengali matras / conjuncts match the stored
+        // slug (always saved NFC) even when a browser sends the URL in NFD form.
+        try { clean = clean.normalize('NFC'); } catch { /* ignore */ }
+
         const escaped = clean.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const normalized = clean.replace(/-+/g, '-');
         const escapedNormalized = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

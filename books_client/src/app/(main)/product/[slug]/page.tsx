@@ -39,6 +39,8 @@ export default function ProductDetailsPage() {
                 if (s === prev) break;
             }
         } catch {}
+        // Normalize to NFC so a Bengali slug typed/copied in NFD still matches.
+        try { s = s.normalize('NFC'); } catch {}
         return s;
     }, [rawSlug]);
 

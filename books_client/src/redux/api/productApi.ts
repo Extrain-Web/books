@@ -47,6 +47,8 @@ export const productApi = baseApi.injectEndpoints({
                 } catch {
                     // ignore malformed URI
                 }
+                // Normalize to NFC so the encoded slug matches the stored (NFC) slug.
+                try { clean = clean.normalize('NFC'); } catch { /* ignore */ }
                 return `/products/slug/${encodeURIComponent(clean)}`;
             },
             providesTags: ['Products'],

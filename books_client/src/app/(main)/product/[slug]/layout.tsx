@@ -13,6 +13,8 @@ async function getProduct(slug: string): Promise<any | null> {
                 if (clean === prev) break;
             }
         } catch {}
+        // Normalize to NFC so the encoded slug matches the stored (NFC) slug.
+        try { clean = clean.normalize('NFC'); } catch {}
         // Public product detail route — GET /api/products/slug/:slug
         const res = await fetch(`${API_BASE}/products/slug/${encodeURIComponent(clean)}`, {
             next: { revalidate: 300 },
