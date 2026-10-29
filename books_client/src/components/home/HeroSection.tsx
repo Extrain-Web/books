@@ -72,6 +72,16 @@ const HeroSection: React.FC = () => {
      */
     const STAGE_HEIGHT = 'h-[260px] sm:h-[360px] md:h-[470px] lg:h-[560px]';
 
+    /**
+     * Admin banner artwork is wide (~3:1, recommended 1920×540). On phones the
+     * fixed 260px-tall frame above is far taller than the screen is wide, so
+     * `object-cover` zoomed each banner in and sliced the left/right off — the
+     * headline and publisher logos got cut. On phones we instead let the frame
+     * follow the banner's own 3:1 ratio, so the WHOLE banner is shown edge to
+     * edge with no cropping. From `sm` up the desktop frame is untouched.
+     */
+    const BANNER_STAGE = 'aspect-[3/1] h-auto sm:aspect-auto sm:h-[360px] md:h-[470px] lg:h-[560px]';
+
     useEffect(() => { setActive(0); }, [images.length]);
 
     // Autoplay (pauses on hover, respects reduced motion).
@@ -104,7 +114,7 @@ const HeroSection: React.FC = () => {
         return (
             <section className="w-full" aria-label="Featured banners">
                 <div className="w-full">
-                    <div className={`w-full animate-pulse bg-slate-100 ${STAGE_HEIGHT}`} />
+                    <div className={`w-full animate-pulse bg-slate-100 ${BANNER_STAGE}`} />
                 </div>
             </section>
         );
@@ -124,8 +134,9 @@ const HeroSection: React.FC = () => {
                     onTouchEnd={onTouchEnd}
                     aria-roledescription="carousel"
                 >
-                    {/* Stage — a constant height; banners are cover-fitted into it. */}
-                    <div className={`relative w-full overflow-hidden ${STAGE_HEIGHT}`}>
+                    {/* Stage — desktop keeps a constant height (cover-fit); phones
+                        follow the banner's 3:1 ratio so nothing is cropped. */}
+                    <div className={`relative w-full overflow-hidden ${BANNER_STAGE}`}>
 
                         {/* ── Crossfading banner images (+ optional text overlay) ── */}
                         {slides.map((slide, i) => {
