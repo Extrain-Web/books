@@ -4,11 +4,11 @@
   "description": "Bichitra Point - online marketplace backend API",
   "main": "index.js",
   "scripts": {
-    "start": "node init && node index.js",
-    "start:prod": "node init && node index.js",
-    "start:dev": "node init && ts-node-dev --respawn --transpile-only src/server.ts",
+    "start": "node index.js",
+    "start:prod": "node index.js",
+    "start:dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "seed": "node scripts/seed-data.mjs",
-    "build": "node init && tsc && node -e \"const fs=require('fs'); if(fs.existsSync('assets')){fs.cpSync('assets','dist/assets',{recursive:true});}\"",
+    "build": "tsc && node -e \"const fs=require('fs'); if(fs.existsSync('assets')){fs.cpSync('assets','dist/assets',{recursive:true});}\"",
     "lint": "eslint src --ignore-path .eslintignore --ext .ts",
     "lint:fix": "npx eslint src --fix",
     "prettier:fix": "npx prettier --write src"
